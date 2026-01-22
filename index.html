@@ -6,21 +6,17 @@
   <title>TBN WEB - Site Profissional por R$549</title>
   <script src="/_sdk/element_sdk.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript>
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  </noscript>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
         body {
             box-sizing: border-box;
         }
         
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-        
         * {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
         
         .gradient-bg {
@@ -38,126 +34,26 @@
 
         
         .animate-fade-in {
-            animation: fadeIn 1.2s ease-out forwards;
-            opacity: 0;
+            animation: fadeIn 0.6s ease-out forwards;
         }
         
         @keyframes fadeIn {
+            from { opacity: 0; }
             to { opacity: 1; }
         }
         
         .animate-slide-up {
-            animation: slideUp 1s ease-out forwards;
-            opacity: 0;
-            transform: translateY(50px);
+            animation: slideUp 0.5s ease-out forwards;
         }
         
         @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
             to {
                 opacity: 1;
                 transform: translateY(0);
-            }
-        }
-        
-        .animate-slide-left {
-            animation: slideLeft 1s ease-out forwards;
-            opacity: 0;
-            transform: translateX(50px);
-        }
-        
-        @keyframes slideLeft {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .animate-slide-right {
-            animation: slideRight 1s ease-out forwards;
-            opacity: 0;
-            transform: translateX(-50px);
-        }
-        
-        @keyframes slideRight {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .animate-scale {
-            animation: scaleIn 0.8s ease-out forwards;
-            opacity: 0;
-            transform: scale(0.8);
-        }
-        
-        @keyframes scaleIn {
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        .animate-rotate {
-            animation: rotateIn 1s ease-out forwards;
-            opacity: 0;
-            transform: rotate(-10deg) scale(0.9);
-        }
-        
-        @keyframes rotateIn {
-            to {
-                opacity: 1;
-                transform: rotate(0deg) scale(1);
-            }
-        }
-        
-        .animate-bounce-in {
-            animation: bounceIn 1s ease-out forwards;
-            opacity: 0;
-            transform: scale(0.3);
-        }
-        
-        @keyframes bounceIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.3);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.05);
-            }
-            70% {
-                transform: scale(0.9);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        .animate-flip {
-            animation: flipIn 1s ease-out forwards;
-            opacity: 0;
-            transform: perspective(400px) rotateY(90deg);
-        }
-        
-        @keyframes flipIn {
-            to {
-                opacity: 1;
-                transform: perspective(400px) rotateY(0deg);
-            }
-        }
-        
-        .animate-glow {
-            animation: glowPulse 2s ease-in-out infinite;
-        }
-        
-        @keyframes glowPulse {
-            0%, 100% {
-                box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-            }
-            50% {
-                box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
             }
         }
         
@@ -330,58 +226,18 @@
         }
         
         .animate-text-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: textReveal 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation: textReveal 0.6s ease-out forwards;
         }
         
         @keyframes textReveal {
-            0% {
-                opacity: 0;
-                transform: translateY(30px) scale(0.95);
-                filter: blur(10px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-                filter: blur(0);
-            }
-        }
-        
-        .animate-text-shimmer {
-            opacity: 0;
-            animation: textShimmer 1.5s ease-out forwards;
-            position: relative;
-        }
-        
-        @keyframes textShimmer {
-            0% {
+            from {
                 opacity: 0;
                 transform: translateY(20px);
             }
-            50% {
-                opacity: 0.5;
-            }
-            100% {
+            to {
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-        
-        .animate-text-shimmer::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            animation: shimmerSweep 2s ease-in-out 1s;
-        }
-        
-        @keyframes shimmerSweep {
-            0% { left: -100%; }
-            100% { left: 100%; }
         }
         
         .feature-icon {
@@ -657,16 +513,16 @@
    </div>
   </header><!-- Seç����o Hero - Criação de Sites -->
   <section id="criacao-sites" class="min-h-screen flex items-center pt-0 relative overflow-hidden"><!-- Imagem de fundo -->
-   <div class="absolute inset-0"><img src="https://i.imgur.com/9ATxsQd.jpg" alt="Background" class="w-full h-full object-cover" onerror="this.style.display='none';">
+   <div class="absolute inset-0"><img src="https://i.imgur.com/9ATxsQd.jpg" alt="" class="w-full h-full object-cover" loading="eager" onerror="this.style.display='none';">
     <div class="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-slate-950/95"></div>
    </div><!-- Efeitos de fundo -->
-   <div class="absolute inset-0 opacity-10 tech-pattern"></div>
+   <div class="absolute inset-0 opacity-10 tech-pattern" aria-hidden="true"></div>
    <div class="container mx-auto px-6 text-white relative z-10 w-full">
     <div class="animate-fade-in text-center mb-12 mt-48">
      <div class="inline-block mb-6 px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full animate-bounce-in"><span class="text-blue-400 font-semibold text-sm tracking-wide uppercase">Soluções Web Profissionais</span>
      </div>
-     <h1 id="hero-title" class="text-4xl md:text-5xl font-black mb-6 leading-none tracking-tighter"><span class="block neon-title animate-text-reveal" style="animation-delay: 0.2s;">Site Profissional</span> <span class="block neon-subtitle mt-2 animate-text-reveal" style="animation-delay: 0.5s;">Em Até 5 Dias</span></h1>
-     <p id="hero-subtitle" class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed animate-text-shimmer" style="animation-delay: 0.8s;">Site rápido, responsivo, seguro e com domínio incluso.</p>
+     <h1 id="hero-title" class="text-4xl md:text-5xl font-black mb-6 leading-none tracking-tighter"><span class="block text-white animate-text-reveal">Site Profissional</span> <span class="block text-blue-400 mt-2 animate-text-reveal">Em Até 5 Dias</span></h1>
+     <p id="hero-subtitle" class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed animate-fade-in">Site rápido, responsivo, seguro e com domínio incluso.</p>
     </div><!-- Carrossel 3D de Modelos -->
     <div class="carousel-container">
      <div class="carousel-wrapper"><!-- Slide 1 - Corretor de Imóveis -->
@@ -716,52 +572,52 @@
       <div class="indicator" onclick="goToSlide(2)"></div>
      </div>
     </div><!-- CTAs -->
-    <div class="flex flex-col md:flex-row items-center justify-center gap-5 mt-12"><button onclick="scrollToOffer()" class="btn-primary text-white px-10 py-4 rounded-xl text-lg font-bold shadow-2xl uppercase tracking-wide animate-bounce-in" style="animation-delay: 0.5s;"> Quero Crescer Meu Negócio Agora </button> <button onclick="scrollToServices()" class="btn-secondary px-10 py-4 rounded-xl font-semibold text-lg uppercase tracking-wide animate-bounce-in" style="animation-delay: 0.6s;"> Ver Mais Detalhes </button>
+    <div class="flex flex-col md:flex-row items-center justify-center gap-5 mt-12"><button onclick="scrollToOffer()" class="btn-primary text-white px-10 py-4 rounded-xl text-lg font-bold shadow-2xl uppercase tracking-wide animate-fade-in" aria-label="Solicitar orçamento e crescer negócio"> Quero Crescer Meu Negócio Agora </button> <button onclick="scrollToServices()" class="btn-secondary px-10 py-4 rounded-xl font-semibold text-lg uppercase tracking-wide animate-fade-in" aria-label="Ver mais detalhes dos serviços"> Ver Mais Detalhes </button>
     </div>
    </div>
   </section><!-- O que está incluído -->
-  <section id="servicos" class="section-padding bg-gradient-to-br from-slate-900 via-slate-950 to-slate-950 relative"><!-- Gradiente de transição suave -->
-   <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-slate-950/90 to-transparent pointer-events-none"></div>
+  <section id="servicos" class="section-padding bg-gradient-to-br from-slate-900 via-slate-950 to-slate-950 relative" aria-labelledby="servicos-title"><!-- Gradiente de transição suave -->
+   <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-slate-950/90 to-transparent pointer-events-none" aria-hidden="true"></div>
    <div class="container mx-auto px-6">
     <div class="text-center mb-20">
      <div class="inline-block mb-4 px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full animate-bounce-in"><span class="text-blue-400 font-semibold text-sm tracking-wide uppercase">Pacote Completo</span>
      </div>
-     <h2 class="text-5xl font-extrabold text-white mb-6 tracking-tight animate-slide-up">Tudo Incluído por <span id="price-display" class="text-gradient">R$549</span></h2>
+     <h2 id="servicos-title" class="text-5xl font-extrabold text-white mb-6 tracking-tight animate-slide-up">Tudo Incluído por <span id="price-display" class="text-gradient">R$549</span></h2>
      <p class="text-xl text-gray-400 font-light max-w-2xl mx-auto animate-fade-in">Solução completa para estabelecer sua presença digital com excelência</p>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
      <div class="glass-effect p-8 rounded-2xl shadow-2xl card-hover card-animate border border-blue-500/20">
-      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-paint-brush text-white text-2xl"></i>
+      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6" aria-hidden="true"><i class="fas fa-paint-brush text-white text-2xl"></i>
       </div>
       <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Design Exclusivo</h3>
       <p class="text-gray-400 leading-relaxed">Layout personalizado e único para sua marca, sem templates genéricos.</p>
      </div>
      <div class="glass-effect p-8 rounded-2xl shadow-2xl card-hover card-animate border border-blue-500/20">
-      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-mobile-alt text-white text-2xl"></i>
+      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6" aria-hidden="true"><i class="fas fa-mobile-alt text-white text-2xl"></i>
       </div>
       <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">100% Responsivo</h3>
       <p class="text-gray-400 leading-relaxed">Perfeito em celular, tablet e desktop. Seus clientes acessam de qualquer lugar.</p>
      </div>
      <div class="glass-effect p-8 rounded-2xl shadow-2xl card-hover card-animate border border-blue-500/20">
-      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-globe text-white text-2xl"></i>
+      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6" aria-hidden="true"><i class="fas fa-globe text-white text-2xl"></i>
       </div>
       <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Domínio Profissional</h3>
       <p class="text-gray-400 leading-relaxed">Domínio incluso por 1 ano. Sua marca na internet com credibilidade.</p>
      </div>
      <div class="glass-effect p-8 rounded-2xl shadow-2xl card-hover card-animate border border-blue-500/20">
-      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6"><i class="fab fa-whatsapp text-white text-2xl"></i>
+      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6" aria-hidden="true"><i class="fab fa-whatsapp text-white text-2xl"></i>
       </div>
       <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Integração WhatsApp</h3>
       <p class="text-gray-400 leading-relaxed">Botão direto para WhatsApp. Seus clientes falam com você em 1 clique.</p>
      </div>
      <div class="glass-effect p-8 rounded-2xl shadow-2xl card-hover card-animate border border-blue-500/20">
-      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-map-marker-alt text-white text-2xl"></i>
+      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6" aria-hidden="true"><i class="fas fa-map-marker-alt text-white text-2xl"></i>
       </div>
       <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Google Maps</h3>
       <p class="text-gray-400 leading-relaxed">Localização integrada para seus clientes chegarem até você facilmente.</p>
      </div>
      <div class="glass-effect p-8 rounded-2xl shadow-2xl card-hover card-animate border border-blue-500/20">
-      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6"><i class="fas fa-search text-white text-2xl"></i>
+      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6" aria-hidden="true"><i class="fas fa-search text-white text-2xl"></i>
       </div>
       <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">SEO Otimizado</h3>
       <p class="text-gray-400 leading-relaxed">Otimização para Google. Seus clientes vão encontrar você nas buscas.</p>
@@ -997,7 +853,7 @@
     </div>
    </div>
   </footer><!-- WhatsApp Flutuante -->
-  <div class="whatsapp-float"><button onclick="contactWhatsApp()" class="w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg"> <i class="fab fa-whatsapp text-white text-2xl"></i> </button>
+  <div class="whatsapp-float"><button onclick="contactWhatsApp()" class="w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg" aria-label="Entrar em contato via WhatsApp"> <i class="fab fa-whatsapp text-white text-2xl" aria-hidden="true"></i> </button>
   </div>
   <script>
         // Configuração padrão
@@ -1027,9 +883,9 @@
             const heroTitleElement = document.getElementById('hero-title');
             const titleParts = heroTitle.split('Em Até');
             if (titleParts.length === 2) {
-                heroTitleElement.innerHTML = `<span class="block neon-title animate-text-reveal" style="animation-delay: 0.2s;">${titleParts[0].trim()}</span><span class="block neon-subtitle mt-2 animate-text-reveal" style="animation-delay: 0.5s;">Em Até${titleParts[1]}</span>`;
+                heroTitleElement.innerHTML = `<span class="block text-white animate-text-reveal">${titleParts[0].trim()}</span><span class="block text-blue-400 mt-2 animate-text-reveal">Em Até${titleParts[1]}</span>`;
             } else {
-                heroTitleElement.innerHTML = `<span class="block neon-title animate-text-reveal" style="animation-delay: 0.2s;">${heroTitle}</span>`;
+                heroTitleElement.innerHTML = `<span class="block text-white animate-text-reveal">${heroTitle}</span>`;
             }
             
             document.getElementById('hero-subtitle').textContent = heroSubtitle;
@@ -1159,7 +1015,15 @@
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
+            const button = document.querySelector('[aria-controls="mobile-menu"]');
+            const isHidden = menu.classList.contains('hidden');
+            
             menu.classList.toggle('hidden');
+            
+            if (button) {
+                button.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+                button.setAttribute('aria-label', isHidden ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+            }
         }
 
         function contactWhatsApp() {
@@ -1241,5 +1105,5 @@
             updateCarousel();
         });
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c1e2c8b163807de',t:'MTc2OTA3NTcwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c1fd965d1b68046',t:'MTc2OTA5MzI3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
