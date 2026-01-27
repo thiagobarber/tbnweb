@@ -3,1107 +3,494 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TBN WEB - Site Profissional por R$549</title>
-  <script src="/_sdk/element_sdk.js"></script>
+  <title>TBN WEB - Landing Pages de Alta Convers��o</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <style>
-        body {
-            box-sizing: border-box;
-        }
-        
-        * {
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .tech-pattern {
-            background-image: 
-                linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
-
-        
-        .animate-fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .animate-slide-up {
-            animation: slideUp 0.5s ease-out forwards;
-        }
-        
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-        
-        .btn-primary:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.6);
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-        }
-        
-        .btn-primary:active {
-            transform: translateY(-1px) scale(1.02);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid #3b82f6;
-            color: white;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-secondary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: #3b82f6;
-            transition: left 0.4s;
-            z-index: -1;
-        }
-        
-        .btn-secondary:hover::before {
-            left: 0;
-        }
-        
-        .btn-secondary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
-            border-color: #2563eb;
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
-            border-color: rgba(59, 130, 246, 0.8);
-        }
-        
-        .card-animate {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        
-        .card-animate.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .countdown-box {
-            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
-            box-shadow: 0 10px 40px rgba(220, 38, 38, 0.4);
-        }
-        
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-        }
-        
-        .whatsapp-float button:hover {
-            transform: scale(1.1);
-        }
-        
-        .section-padding {
-            padding: 100px 0;
-        }
-        
-        @media (max-width: 768px) {
-            .section-padding {
-                padding: 60px 0;
-            }
-        }
-        
-        .parallax-element {
-            transition: transform 0.5s ease-out;
-        }
-        
-        @keyframes glow-pulse {
-            0%, 100% { 
-                box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-            }
-            50% { 
-                box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
-            }
-        }
-        
-        .icon-glow {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-        }
-        
-        .glass-effect {
-            background: rgba(30, 41, 59, 0.4);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(59, 130, 246, 0.1);
-        }
-        
-        .text-gradient {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #3b82f6 100%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: textGradientFlow 3s ease-in-out infinite;
-        }
-        
-        @keyframes textGradientFlow {
-            0%, 100% { background-position: 0% center; }
-            50% { background-position: 100% center; }
-        }
-        
-        .neon-title {
-            color: #fff;
-            text-shadow: 
-                0 0 10px rgba(59, 130, 246, 0.4),
-                0 0 20px rgba(59, 130, 246, 0.2);
-        }
-        
-        .neon-subtitle {
-            color: #fff;
-            text-shadow: 
-                0 0 10px rgba(139, 92, 246, 0.3),
-                0 0 15px rgba(139, 92, 246, 0.2);
-        }
-        
-        .animate-text-reveal {
-            animation: textReveal 0.6s ease-out forwards;
-        }
-        
-        @keyframes textReveal {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .feature-icon {
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .feature-icon:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
-        }
-        
-        .pricing-badge {
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            box-shadow: 0 5px 20px rgba(251, 191, 36, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-        
-
-
-        /* Carrossel 3D */
-        .carousel-container {
-            perspective: 2000px;
-            position: relative;
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .carousel-wrapper {
-            position: relative;
-            width: 100%;
-            height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .carousel-slide {
-            position: absolute;
-            width: 90%;
-            max-width: 900px;
-            height: 500px;
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-style: preserve-3d;
-            cursor: pointer;
-        }
-
-        .carousel-slide.active {
-            transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
-            opacity: 1;
-            z-index: 10;
-            filter: blur(0);
-        }
-
-        .carousel-slide.prev {
-            transform: translateX(-60%) translateZ(-400px) rotateY(25deg) scale(0.75);
-            opacity: 0.5;
-            z-index: 5;
-            filter: blur(2px);
-        }
-
-        .carousel-slide.next {
-            transform: translateX(60%) translateZ(-400px) rotateY(-25deg) scale(0.75);
-            opacity: 0.5;
-            z-index: 5;
-            filter: blur(2px);
-        }
-
-        .carousel-slide.hidden {
-            transform: translateX(0) translateZ(-800px) scale(0.5);
-            opacity: 0;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .website-mockup {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 
-                0 50px 100px rgba(0, 0, 0, 0.8),
-                0 0 0 1px rgba(59, 130, 246, 0.2),
-                inset 0 0 100px rgba(59, 130, 246, 0.05);
-            position: relative;
-            transform-style: preserve-3d;
-        }
-
-        .website-mockup::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 40px;
-            background: rgba(30, 41, 59, 0.95);
-            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
-            display: flex;
-            align-items: center;
-            padding: 0 15px;
-            z-index: 10;
-        }
-
-        .website-mockup::after {
-            content: '';
-            position: absolute;
-            top: 12px;
-            left: 15px;
-            width: 12px;
-            height: 12px;
-            background: #ef4444;
-            border-radius: 50%;
-            box-shadow: 
-                20px 0 0 #f59e0b,
-                40px 0 0 #22c55e;
-            z-index: 11;
-        }
-
-        .website-content {
-            width: 100%;
-            height: 100%;
-            padding-top: 40px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .website-content img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: center center;
-            background: #0f172a;
-        }
-
-        .carousel-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 20;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(37, 99, 235, 0.2));
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(59, 130, 246, 0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: white;
-            font-size: 24px;
-        }
-
-        .carousel-nav:hover {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(37, 99, 235, 0.4));
-            border-color: rgba(59, 130, 246, 0.6);
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
-        }
-
-        .carousel-nav.prev-btn {
-            left: 20px;
-        }
-
-        .carousel-nav.next-btn {
-            right: 20px;
-        }
-
-        .carousel-indicators {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 40px;
-        }
-
-        .indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(59, 130, 246, 0.3);
-            border: 2px solid rgba(59, 130, 246, 0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .indicator.active {
-            background: #3b82f6;
-            transform: scale(1.3);
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
-        }
-
-        .indicator:hover {
-            background: rgba(59, 130, 246, 0.6);
-            transform: scale(1.2);
-        }
-
-        .website-badge {
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 14px;
-            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
-            z-index: 10;
-        }
-
-        @media (max-width: 768px) {
-            .carousel-wrapper {
-                height: 400px;
-            }
-
-            .carousel-slide {
-                max-width: 320px;
-                height: 350px;
-            }
-
-            .carousel-slide.prev,
-            .carousel-slide.next {
-                transform: translateX(0) translateZ(-400px) scale(0.6);
-                opacity: 0.3;
-            }
-
-            .carousel-nav {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-
-            .carousel-nav.prev-btn {
-                left: 10px;
-            }
-
-            .carousel-nav.next-btn {
-                right: 10px;
-            }
-
-            .website-badge {
-                top: 50px;
-                right: 10px;
-                padding: 6px 12px;
-                font-size: 12px;
-            }
-        }
-    </style>
+    body {
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    .hero-gradient {
+      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .btn-pulse {
+      animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    
+    @keyframes pulse-ring {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+      }
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(30, 64, 175, 0.25);
+    }
+    
+    .urgency-bar {
+      background: linear-gradient(90deg, #dc2626 0%, #ef4444 50%, #dc2626 100%);
+      background-size: 200% 100%;
+      animation: urgency-flow 3s linear infinite;
+    }
+    
+    @keyframes urgency-flow {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 200% 0%; }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .price-strike {
+      position: relative;
+    }
+    
+    .price-strike::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 2px;
+      background: #dc2626;
+      transform: rotate(-8deg);
+    }
+    
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 1000;
+      animation: float-pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes float-pulse {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+      }
+      50% {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 15px 35px rgba(37, 211, 102, 0.7);
+      }
+    }
+    
+    .whatsapp-float:hover {
+      animation: none;
+      transform: scale(1.1);
+    }
+  </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
- <body class="bg-gray-900 h-full"><!-- Barra de Horário -->
-  <div class="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md border-b border-slate-800/50 text-gray-300 py-2 z-50 text-center text-xs font-normal">
-   <div class="flex items-center justify-center gap-2"><i class="far fa-clock text-blue-400 text-sm"></i> <span id="schedule-top">Atendimento: Segunda a Sexta das 9h às 18h</span>
-   </div>
-  </div><!-- Header Fixo -->
-  <header class="fixed top-10 w-full glass-effect shadow-2xl z-50 border-b border-blue-500/10 animate-slide-up">
-   <nav class="container mx-auto px-6 py-3 flex items-center justify-between">
-    <div class="flex items-center"><img src="https://i.imgur.com/CVtgAoC.png" alt="TBN WEB Logo" class="h-16 md:h-20 w-auto" onerror="this.style.display='none';">
-    </div>
-    <div class="hidden md:flex items-center space-x-10"><a href="#servicos" class="text-gray-300 hover:text-blue-400 transition-all duration-300 font-medium">Serviços</a> <a href="#beneficios" class="text-gray-300 hover:text-blue-400 transition-all duration-300 font-medium">Benefícios</a> <a href="#contato" class="text-gray-300 hover:text-blue-400 transition-all duration-300 font-medium">Contato</a>
-    </div><button onclick="scrollToOffer()" class="btn-primary text-white px-4 py-2 rounded-lg font-semibold text-xs tracking-wide uppercase whitespace-nowrap"> Orçamento </button> <button class="md:hidden text-gray-300" onclick="toggleMobileMenu()"> <i class="fas fa-bars text-xl"></i> </button>
-   </nav><!-- Menu Mobile -->
-   <div id="mobile-menu" class="hidden md:hidden glass-effect border-t border-blue-500/10">
-    <div class="container mx-auto px-6 py-6 space-y-4"><a href="#servicos" class="block text-gray-300 hover:text-blue-400 font-medium">Serviços</a> <a href="#beneficios" class="block text-gray-300 hover:text-blue-400 font-medium">Benefícios</a> <a href="#contato" class="block text-gray-300 hover:text-blue-400 font-medium">Contato</a>
-    </div>
-   </div>
-  </header><!-- Seç����o Hero - Criação de Sites -->
-  <section id="criacao-sites" class="min-h-screen flex items-center pt-0 relative overflow-hidden"><!-- Imagem de fundo -->
-   <div class="absolute inset-0"><img src="https://i.imgur.com/9ATxsQd.jpg" alt="" class="w-full h-full object-cover" loading="eager" onerror="this.style.display='none';">
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-slate-950/95"></div>
-   </div><!-- Efeitos de fundo -->
-   <div class="absolute inset-0 opacity-10 tech-pattern" aria-hidden="true"></div>
-   <div class="container mx-auto px-6 text-white relative z-10 w-full">
-    <div class="animate-fade-in text-center mb-12 mt-48">
-     <div class="inline-block mb-6 px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full animate-bounce-in"><span class="text-blue-400 font-semibold text-sm tracking-wide uppercase">Soluções Web Profissionais</span>
+ <body class="h-full bg-white overflow-auto">
+  <div class="min-h-full w-full"><!-- Urgency Bar -->
+   <div class="urgency-bar text-white py-3 px-4 text-center">
+    <div class="flex items-center justify-center gap-4 flex-wrap">
+     <div class="flex items-center gap-2">
+      <svg class="w-5 h-5 flex-shrink-0 animate-pulse" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg><span class="font-semibold text-sm md:text-base">OFERTA EXPIRA EM:</span>
      </div>
-     <h1 id="hero-title" class="text-4xl md:text-5xl font-black mb-6 leading-none tracking-tighter"><span class="block text-white animate-text-reveal">Site Profissional</span> <span class="block text-blue-400 mt-2 animate-text-reveal">Em Até 5 Dias</span></h1>
-     <p id="hero-subtitle" class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed animate-fade-in">Site rápido, responsivo, seguro e com domínio incluso.</p>
-    </div><!-- Carrossel 3D de Modelos -->
-    <div class="carousel-container">
-     <div class="carousel-wrapper"><!-- Slide 1 - Corretor de Imóveis -->
-      <div class="carousel-slide active" data-index="0">
-       <div class="website-mockup">
-        <div class="website-badge">
-         Corretor de Imóveis
-        </div>
-        <div class="website-content"><img src="https://i.imgur.com/UPZTZ6k.png" alt="Site Corretor de Imóveis" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-         <div style="display: none; width: 100%; height: 100%; background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%); align-items: center; justify-content: center; flex-direction: column; padding: 40px;"><i class="fas fa-home text-white text-6xl mb-4"></i>
-          <h3 class="text-white text-3xl font-bold mb-2">Corretor de Imóveis</h3>
-          <p class="text-gray-200 text-center">Portfólio completo de imóveis</p>
-         </div>
-        </div>
+     <div class="flex items-center gap-2">
+      <div class="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-1.5 min-w-[50px] text-center"><span id="hours" class="font-bold text-xl md:text-2xl tracking-tight">03</span>
+       <div class="text-[10px] uppercase tracking-wide opacity-90">
+        Horas
        </div>
-      </div><!-- Slide 2 - Concessionária -->
-      <div class="carousel-slide next" data-index="1">
-       <div class="website-mockup">
-        <div class="website-badge">
-         Concessionária
-        </div>
-        <div class="website-content"><img src="https://i.imgur.com/SaKR3wv.png" alt="Site Concessionária" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-         <div style="display: none; width: 100%; height: 100%; background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); align-items: center; justify-content: center; flex-direction: column; padding: 40px;"><i class="fas fa-car text-white text-6xl mb-4"></i>
-          <h3 class="text-white text-3xl font-bold mb-2">Concessionária</h3>
-          <p class="text-gray-200 text-center">Portfólio completo de veículos</p>
-         </div>
-        </div>
+      </div><span class="font-bold text-xl animate-pulse">:</span>
+      <div class="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-1.5 min-w-[50px] text-center"><span id="minutes" class="font-bold text-xl md:text-2xl tracking-tight">00</span>
+       <div class="text-[10px] uppercase tracking-wide opacity-90">
+        Min
        </div>
-      </div><!-- Slide 3 - Psicologia -->
-      <div class="carousel-slide hidden" data-index="2">
-       <div class="website-mockup">
-        <div class="website-badge">
-         Psicologia
-        </div>
-        <div class="website-content"><img src="https://i.imgur.com/6qxibVG.png" alt="Site Psicologia" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-         <div style="display: none; width: 100%; height: 100%; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); align-items: center; justify-content: center; flex-direction: column; padding: 40px;"><i class="fas fa-brain text-white text-6xl mb-4"></i>
-          <h3 class="text-white text-3xl font-bold mb-2">Psicologia</h3>
-          <p class="text-gray-200 text-center">Atendimento online e presencial</p>
-         </div>
-        </div>
-       </div>
-      </div><!-- Navegação --> <button class="carousel-nav prev-btn" onclick="prevSlide()"> <i class="fas fa-chevron-left"></i> </button> <button class="carousel-nav next-btn" onclick="nextSlide()"> <i class="fas fa-chevron-right"></i> </button>
-     </div><!-- Indicadores -->
-     <div class="carousel-indicators">
-      <div class="indicator active" onclick="goToSlide(0)"></div>
-      <div class="indicator" onclick="goToSlide(1)"></div>
-      <div class="indicator" onclick="goToSlide(2)"></div>
-     </div>
-    </div><!-- CTAs -->
-    <div class="flex flex-col md:flex-row items-center justify-center gap-5 mt-12"><button onclick="scrollToOffer()" class="btn-primary text-white px-10 py-4 rounded-xl text-lg font-bold shadow-2xl uppercase tracking-wide animate-fade-in" aria-label="Solicitar orçamento e crescer negócio"> Quero Crescer Meu Negócio Agora </button> <button onclick="scrollToServices()" class="btn-secondary px-10 py-4 rounded-xl font-semibold text-lg uppercase tracking-wide animate-fade-in" aria-label="Ver mais detalhes dos serviços"> Ver Mais Detalhes </button>
-    </div>
-   </div>
-  </section><!-- O que está incluído -->
-  <section id="servicos" class="section-padding bg-gradient-to-br from-slate-900 via-slate-950 to-slate-950 relative" aria-labelledby="servicos-title"><!-- Gradiente de transição suave -->
-   <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-slate-950/90 to-transparent pointer-events-none" aria-hidden="true"></div>
-   <div class="container mx-auto px-6">
-    <div class="text-center mb-20">
-     <div class="inline-block mb-4 px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full animate-bounce-in"><span class="text-blue-400 font-semibold text-sm tracking-wide uppercase">Pacote Completo</span>
-     </div>
-     <h2 id="servicos-title" class="text-5xl font-extrabold text-white mb-6 tracking-tight animate-slide-up">Tudo Incluído por <span id="price-display" class="text-gradient">R$549</span></h2>
-     <p class="text-xl text-gray-400 font-light max-w-2xl mx-auto animate-fade-in">Solução completa para estabelecer sua presença digital com excelência</p>
-    </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-     <div class="glass-effect p-8 rounded-2xl shadow-2xl card-hover card-animate border border-blue-500/20">
-      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6" aria-hidden="true"><i class="fas fa-paint-brush text-white text-2xl"></i>
-      </div>
-      <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Design Exclusivo</h3>
-      <p class="text-gray-400 leading-relaxed">Layout personalizado e único para sua marca, sem templates genéricos.</p>
-     </div>
-     <div class="glass-effect p-8 rounded-2xl shadow-2xl card-hover card-animate border border-blue-500/20">
-      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6" aria-hidden="true"><i class="fas fa-mobile-alt text-white text-2xl"></i>
-      </div>
-      <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">100% Responsivo</h3>
-      <p class="text-gray-400 leading-relaxed">Perfeito em celular, tablet e desktop. Seus clientes acessam de qualquer lugar.</p>
-     </div>
-     <div class="glass-effect p-8 rounded-2xl shadow-2xl card-hover card-animate border border-blue-500/20">
-      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6" aria-hidden="true"><i class="fas fa-globe text-white text-2xl"></i>
-      </div>
-      <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Domínio Profissional</h3>
-      <p class="text-gray-400 leading-relaxed">Domínio incluso por 1 ano. Sua marca na internet com credibilidade.</p>
-     </div>
-     <div class="glass-effect p-8 rounded-2xl shadow-2xl card-hover card-animate border border-blue-500/20">
-      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6" aria-hidden="true"><i class="fab fa-whatsapp text-white text-2xl"></i>
-      </div>
-      <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Integração WhatsApp</h3>
-      <p class="text-gray-400 leading-relaxed">Botão direto para WhatsApp. Seus clientes falam com você em 1 clique.</p>
-     </div>
-     <div class="glass-effect p-8 rounded-2xl shadow-2xl card-hover card-animate border border-blue-500/20">
-      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6" aria-hidden="true"><i class="fas fa-map-marker-alt text-white text-2xl"></i>
-      </div>
-      <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Google Maps</h3>
-      <p class="text-gray-400 leading-relaxed">Localização integrada para seus clientes chegarem até você facilmente.</p>
-     </div>
-     <div class="glass-effect p-8 rounded-2xl shadow-2xl card-hover card-animate border border-blue-500/20">
-      <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6" aria-hidden="true"><i class="fas fa-search text-white text-2xl"></i>
-      </div>
-      <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">SEO Otimizado</h3>
-      <p class="text-gray-400 leading-relaxed">Otimização para Google. Seus clientes vão encontrar você nas buscas.</p>
-     </div>
-    </div>
-   </div>
-  </section><!-- Benefícios -->
-  <section id="beneficios" class="section-padding bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-   <div class="container mx-auto px-6">
-    <div class="text-center mb-20">
-     <div class="inline-block mb-4 px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full animate-bounce-in"><span class="text-blue-400 font-semibold text-sm tracking-wide uppercase">Vantagens Competitivas</span>
-     </div>
-     <h2 class="text-5xl font-extrabold text-white mb-6 tracking-tight animate-slide-up">Site Que Gera Resultados Reais</h2>
-     <p class="text-xl text-gray-400 font-light max-w-2xl mx-auto animate-fade-in">Feito para quem quer crescer, atrair mais clientes e aumentar o faturamento</p>
-    </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-     <div class="text-center parallax-element card-animate">
-      <div class="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6 icon-glow"><i class="fas fa-tachometer-alt text-blue-400 text-3xl"></i>
-      </div>
-      <h3 class="text-2xl font-bold text-white mb-4">Velocidade</h3>
-      <p class="text-gray-300">Sites otimizados que carregam em menos de 3 segundos. Seus clientes não vão esperar.</p>
-     </div>
-     <div class="text-center parallax-element card-animate">
-      <div class="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6 icon-glow"><i class="fas fa-award text-green-400 text-3xl"></i>
-      </div>
-      <h3 class="text-2xl font-bold text-white mb-4">Profissionalismo</h3>
-      <p class="text-gray-300">Cause uma primeira impressão impecável. Clientes confiam mais em empresas com site.</p>
-     </div>
-     <div class="text-center parallax-element card-animate">
-      <div class="w-20 h-20 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-6 icon-glow"><i class="fas fa-crown text-purple-400 text-3xl"></i>
-      </div>
-      <h3 class="text-2xl font-bold text-white mb-4">Autoridade</h3>
-      <p class="text-gray-300">Seja encontrado como especialista no seu segmento. Domine sua área de atuação.</p>
-     </div>
-     <div class="text-center parallax-element card-animate">
-      <div class="w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-6 icon-glow"><i class="fas fa-chart-line text-red-400 text-3xl"></i>
-      </div>
-      <h3 class="text-2xl font-bold text-white mb-4">Aumento de Vendas</h3>
-      <p class="text-gray-300">Empresas com site vendem 40% mais. Transforme visitantes em clientes pagantes.</p>
-     </div>
-     <div class="text-center parallax-element card-animate">
-      <div class="w-20 h-20 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-6 icon-glow"><i class="fas fa-magic text-yellow-400 text-3xl"></i>
-      </div>
-      <h3 class="text-2xl font-bold text-white mb-4">Aparência Moderna</h3>
-      <p class="text-gray-300">Design atual e sofisticado que impressiona e converte mais visitantes.</p>
-     </div>
-     <div class="text-center parallax-element card-animate">
-      <div class="w-20 h-20 bg-indigo-500/20 rounded-full flex items-center justify-center mx-auto mb-6 icon-glow"><i class="fas fa-mobile-alt text-indigo-400 text-3xl"></i>
-      </div>
-      <h3 class="text-2xl font-bold text-white mb-4">Mobile Premium</h3>
-      <p class="text-gray-300">80% dos acessos são pelo celular. Seu site será perfeito em qualquer tela.</p>
-     </div>
-    </div>
-   </div>
-  </section><!-- Depoimentos -->
-  <section class="section-padding bg-gradient-to-br from-gray-900 via-black to-gray-900">
-   <div class="container mx-auto px-4">
-    <div class="text-center mb-16">
-     <h2 class="text-4xl font-bold text-white mb-4 animate-slide-up">O que nossos clientes dizem</h2>
-     <p class="text-xl text-gray-300 animate-fade-in">Mais de 500 sites entregues com excelência</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-8">
-     <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 card-hover card-animate">
-      <div class="flex text-yellow-400 mb-4"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
-      </div>
-      <p class="text-gray-300 mb-6">"Meu site ficou incrível! Em 2 dias já estava no ar e as vendas aumentaram 60%. Recomendo demais!"</p>
-      <div class="flex items-center">
-       <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4"><span class="text-white font-bold">MC</span>
-       </div>
-       <div>
-        <h4 class="font-bold text-white">Maria Clara</h4>
-        <p class="text-gray-400">Proprietária de Loja</p>
-       </div>
-      </div>
-     </div>
-     <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 card-hover card-animate">
-      <div class="flex text-yellow-400 mb-4"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
-      </div>
-      <p class="text-gray-300 mb-6">"Profissionais excepcionais! O site ficou exatamente como eu queria. Suporte nota 10!"</p>
-      <div class="flex items-center">
-       <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4"><span class="text-white font-bold">RS</span>
-       </div>
-       <div>
-        <h4 class="font-bold text-white">Roberto Silva</h4>
-        <p class="text-gray-400">Advogado</p>
-       </div>
-      </div>
-     </div>
-     <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 card-hover card-animate">
-      <div class="flex text-yellow-400 mb-4"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
-      </div>
-      <p class="text-gray-300 mb-6">"Melhor investimento que fiz! Agora tenho mais credibilidade e clientes me encontram facilmente."</p>
-      <div class="flex items-center">
-       <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4 animate-float" style="animation-delay: 2s;"><span class="text-white font-bold">AF</span>
-       </div>
-       <div>
-        <h4 class="font-bold text-white">Ana Ferreira</h4>
-        <p class="text-gray-400">Consultora</p>
+      </div><span class="font-bold text-xl animate-pulse">:</span>
+      <div class="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-1.5 min-w-[50px] text-center"><span id="seconds" class="font-bold text-xl md:text-2xl tracking-tight">00</span>
+       <div class="text-[10px] uppercase tracking-wide opacity-90">
+        Seg
        </div>
       </div>
      </div>
     </div>
-   </div>
-  </section><!-- Oferta Promocional -->
-  <section id="oferta" class="section-padding bg-gradient-to-br from-gray-900 via-black to-gray-800 relative overflow-hidden">
-   <div class="container mx-auto px-4 text-center text-white relative z-10">
-    <div class="max-w-4xl mx-auto">
-     <h2 class="text-4xl md:text-5xl font-bold mb-8 animate-bounce-in">Oferta Especial por Tempo Limitado!</h2>
-     <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 animate-scale">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-       <div>
-        <div class="text-left space-y-4">
-         <div class="flex items-center space-x-3 animate-slide-right" style="animation-delay: 0.1s;"><i class="fas fa-check-circle text-green-400 text-xl"></i> <span class="text-lg">Site profissional completo</span>
-         </div>
-         <div class="flex items-center space-x-3 animate-slide-right" style="animation-delay: 0.2s;"><i class="fas fa-check-circle text-green-400 text-xl"></i> <span class="text-lg">Domínio incluso por 1 ano</span>
-         </div>
-         <div class="flex items-center space-x-3 animate-slide-right" style="animation-delay: 0.3s;"><i class="fas fa-check-circle text-green-400 text-xl"></i> <span class="text-lg">Design exclusivo e responsivo</span>
-         </div>
-         <div class="flex items-center space-x-3 animate-slide-right" style="animation-delay: 0.4s;"><i class="fas fa-check-circle text-green-400 text-xl"></i> <span class="text-lg">Entrega em até 5 dias</span>
-         </div>
-         <div class="flex items-center space-x-3 animate-slide-right" style="animation-delay: 0.5s;"><i class="fas fa-check-circle text-green-400 text-xl"></i> <span class="text-lg">Suporte completo incluso</span>
-         </div>
-        </div>
-       </div>
-       <div class="text-center">
-        <div class="mb-8">
-         <h3 class="text-xl font-semibold mb-6 text-gray-200 tracking-wide">Oferta expira em:</h3>
-         <div class="flex items-center justify-center gap-3">
-          <div class="bg-gradient-to-br from-red-600 to-red-700 rounded-2xl p-5 min-w-[90px] shadow-2xl border border-red-500/30">
-           <div id="countdown-minutes" class="text-5xl font-black text-white mb-1">
-            15
-           </div>
-           <div class="text-xs uppercase tracking-wider text-red-200 font-semibold">
-            Minutos
-           </div>
-          </div>
-          <div class="text-4xl font-bold text-white animate-pulse">
-           :
-          </div>
-          <div class="bg-gradient-to-br from-red-600 to-red-700 rounded-2xl p-5 min-w-[90px] shadow-2xl border border-red-500/30">
-           <div id="countdown-seconds" class="text-5xl font-black text-white mb-1">
-            00
-           </div>
-           <div class="text-xs uppercase tracking-wider text-red-200 font-semibold">
-            Segundos
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="mb-6 animate-flip">
-         <div class="text-2xl text-gray-300 line-through mb-2">
-          De <span id="original-price-display">R$ 1.200</span>
-         </div>
-         <div class="text-5xl font-bold text-yellow-300">
-          Por <span id="promo-price-display">R$ 549</span>
-         </div>
-         <div class="text-lg text-gray-200">
-          Taxa única • Sem mensalidades
-         </div>
-        </div>
-       </div>
-      </div>
-     </div><button onclick="contactWhatsApp()" class="bg-green-500 hover:bg-green-600 text-white px-12 py-4 rounded-full text-2xl font-bold shadow-lg transform hover:scale-105 transition-all animate-bounce-in"> <i class="fab fa-whatsapp mr-3"></i> QUERO MEU SITE AGORA </button>
-     <p class="text-lg mt-6 opacity-90 animate-fade-in">Pagamento Seguro • Garantia de Satisfação</p>
+   </div><!-- Header -->
+   <header class="absolute top-20 left-0 right-0 z-50 py-4 px-6">
+    <div class="max-w-7xl mx-auto flex items-center justify-end"><a href="https://wa.me/5511918444743?text=Olá! Vim pelo site e quero garantir minha landing page com desconto!" target="_blank" rel="noopener noreferrer" class="hidden md:flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-white/30 transition-all border-2 border-white/40 hover:border-white/60 shadow-lg">
+      <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg><span>Falar Agora</span> </a>
     </div>
-   </div>
-  </section><!-- FAQ -->
-  <section class="section-padding bg-gradient-to-br from-black via-gray-900 to-black">
-   <div class="container mx-auto px-4">
-    <div class="text-center mb-16">
-     <h2 class="text-4xl font-bold text-white mb-4 animate-slide-up">Perguntas Frequentes</h2>
-     <p class="text-xl text-gray-300 animate-fade-in">Tire suas dúvidas sobre nosso serviço</p>
-    </div>
-    <div class="max-w-3xl mx-auto space-y-6">
-     <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-gray-700 card-animate"><button onclick="toggleFAQ(1)" class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-700/30 transition-all duration-300"> <h3 class="text-xl font-bold text-white">Em quanto tempo o site fica pronto?</h3><i class="fas fa-chevron-down text-gray-400 transform transition-transform" id="icon-1"></i> </button>
-      <div id="faq-1" class="hidden p-6 pt-0 text-gray-300">
-       <p>Seu site fica pronto em até 5 dias úteis após o pagamento e envio do conteúdo. Trabalhamos com agilidade sem comprometer a qualidade.</p>
+   </header><!-- Hero Section -->
+   <section class="relative min-h-[90%] flex items-center"><!-- Background Image -->
+    <div class="absolute inset-0 z-0"><img src="https://i.imgur.com/e5d41ra.jpg" alt="Background" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.parentElement.style.background='linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e40af 100%)'; this.style.display='none';">
+     <div class="absolute inset-0 bg-gradient-to-b from-blue-900/70 via-blue-900/50 to-white"></div>
+    </div><!-- Content -->
+    <div class="relative z-10 w-full px-6 pt-32 pb-20">
+     <div class="max-w-4xl mx-auto text-center fade-in">
+      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full mb-6 text-sm font-medium"><span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span> Vagas Limitadas — Últimas Unidades
       </div>
-     </div>
-     <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-gray-700 card-animate"><button onclick="toggleFAQ(2)" class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-700/30 transition-all duration-300"> <h3 class="text-xl font-bold text-white">O domínio realmente está incluso?</h3><i class="fas fa-chevron-down text-gray-400 transform transition-transform" id="icon-2"></i> </button>
-      <div id="faq-2" class="hidden p-6 pt-0 text-gray-300">
-       <p>Sim! O domínio está incluso por 1 ano completo. Você não paga nada a mais por isso. Após o primeiro ano, a renovação fica por sua conta.</p>
-      </div>
-     </div>
-     <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-gray-700 card-animate"><button onclick="toggleFAQ(3)" class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-700/30 transition-all duration-300"> <h3 class="text-xl font-bold text-white">Posso alterar o site depois de pronto?</h3><i class="fas fa-chevron-down text-gray-400 transform transition-transform" id="icon-3"></i> </button>
-      <div id="faq-3" class="hidden p-6 pt-0 text-gray-300">
-       <p>Claro! Oferecemos suporte para pequenas alterações por 30 dias. Para mudanças maiores, temos planos de manuten����ão acessíveis.</p>
-      </div>
-     </div>
-     <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-gray-700 card-animate"><button onclick="toggleFAQ(4)" class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-700/30 transition-all duration-300"> <h3 class="text-xl font-bold text-white">Vocês oferecem suporte?</h3><i class="fas fa-chevron-down text-gray-400 transform transition-transform" id="icon-4"></i> </button>
-      <div id="faq-4" class="hidden p-6 pt-0 text-gray-300">
-       <p>Sim! Oferecemos suporte completo por WhatsApp e email. Nossa equipe está sempre pronta para ajudar você com qualquer dúvida.</p>
+      <h1 id="hero-title" class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 drop-shadow-lg">Landing Pages que<br><span class="text-blue-300">Convertem Visitantes</span><br>
+        em Clientes</h1>
+      <p id="hero-subtitle" class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-10 leading-relaxed">Desenvolvemos páginas de alta performance focadas em resultados. Design estratégico, copywriting persuasivo e otimização para máxima conversão.</p><!-- Price Box -->
+      <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md mx-auto mb-8">
+       <p class="text-gray-500 text-sm uppercase tracking-wider mb-2">Investimento Especial</p>
+       <div class="flex items-center justify-center gap-4 mb-4"><span id="original-price" class="text-2xl text-gray-400 price-strike">R$ 1.299,99</span> <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">-58%</span>
+       </div>
+       <div class="flex items-baseline justify-center gap-1 mb-2"><span class="text-lg text-gray-600">A partir de</span> <span id="promo-price" class="text-5xl font-extrabold text-gradient">R$ 549,99</span>
+       </div>
+       <p class="text-gray-500 text-sm mb-6">ou 12x de R$ 45,83 sem juros</p><a href="https://wa.me/5511918444743?text=Olá! Quero garantir minha landing page com o preço promocional de R$549,99!" target="_blank" rel="noopener noreferrer" id="cta-main" class="btn-pulse block w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all transform hover:scale-105"> GARANTIR MINHA VAGA AGORA </a>
+       <div class="flex items-center justify-center gap-4 mt-4 text-sm text-gray-500"><span class="flex items-center gap-1">
+         <svg class="w-4 h-4 text-green-500" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+         </svg> Pagamento Seguro </span> <span class="flex items-center gap-1">
+         <svg class="w-4 h-4 text-green-500" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+         </svg> Suporte Dedicado </span>
+       </div>
       </div>
      </div>
     </div>
-   </div>
-  </section><!-- Rodapé -->
-  <footer id="contato" class="bg-gray-900 text-white section-padding">
-   <div class="container mx-auto px-4">
-    <div class="grid md:grid-cols-3 gap-8">
-     <div class="animate-fade-in">
-      <div class="flex items-center mb-6">
-       <div><img src="https://i.imgur.com/CVtgAoC.png" alt="TBN WEB Logo" class="h-20 md:h-24 w-auto" onerror="this.style.display='none';">
-        <h3 id="footer-company-name" class="text-xl font-bold text-white mt-2">TBN WEB</h3>
-       </div>
-      </div>
-      <p class="text-gray-400">Sites estratégicos focados em conversão. Ajudamos seu negócio a crescer e conquistar mais clientes.</p>
+   </section><!-- Services Section -->
+   <section class="py-20 px-6 bg-gradient-to-b from-white to-blue-50">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16"><span class="inline-block text-blue-600 font-semibold text-sm uppercase tracking-wider mb-3">Nossos Serviços</span>
+      <h2 id="services-title" class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Soluções Completas para seu Negócio</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Cada projeto é desenvolvido com estratégia, design de alto nível e foco absoluto em conversão.</p>
      </div>
-     <div class="animate-slide-up" style="animation-delay: 0.1s;">
-      <h4 class="text-lg font-bold mb-4">Contato</h4>
-      <div class="space-y-3">
-       <div class="flex items-center space-x-3"><i class="fab fa-whatsapp text-green-400 flex-shrink-0"></i> <span id="footer-whatsapp" class="text-sm">(11) 94174-4743</span>
+     <div class="grid md:grid-cols-3 gap-8"><!-- Card 1 -->
+      <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+       <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
        </div>
-       <div class="flex items-start space-x-3"><i class="fas fa-envelope text-blue-400 flex-shrink-0 mt-0.5"></i> <span id="footer-email" class="text-xs break-all">thiago.lopes3875@hotmail.com</span>
+       <h3 class="text-xl font-bold text-gray-900 mb-3">Landing Pages</h3>
+       <p class="text-gray-600 mb-4">Páginas de alta conversão com design estratégico, copy persuasiva e otimização para resultados.</p>
+       <ul class="space-y-2 text-sm text-gray-500">
+        <li class="flex items-center gap-2">
+         <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg> Design Responsivo</li>
+        <li class="flex items-center gap-2">
+         <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg> SEO Otimizado</li>
+        <li class="flex items-center gap-2">
+         <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg> Integração WhatsApp</li>
+       </ul>
+      </div><!-- Card 2 -->
+      <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100 relative">
+       <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+        MAIS VENDIDO
        </div>
-       <div class="flex items-center space-x-3"><i class="fas fa-clock text-yellow-400 flex-shrink-0"></i> <span id="schedule-footer" class="text-sm">Seg a Sex das 9h às 18h</span>
+       <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
        </div>
+       <h3 class="text-xl font-bold text-gray-900 mb-3">Sites Institucionais</h3>
+       <p class="text-gray-600 mb-4">Websites profissionais que transmitem credibilidade e fortalecem sua marca no digital.</p>
+       <ul class="space-y-2 text-sm text-gray-500">
+        <li class="flex items-center gap-2">
+         <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg> Múltiplas Páginas</li>
+        <li class="flex items-center gap-2">
+         <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg> Blog Integrado</li>
+        <li class="flex items-center gap-2">
+         <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg> Painel Admin</li>
+       </ul>
+      </div><!-- Card 3 -->
+      <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+       <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold text-gray-900 mb-3">Otimização CRO</h3>
+       <p class="text-gray-600 mb-4">Análise e otimização contínua para maximizar as taxas de conversão do seu site.</p>
+       <ul class="space-y-2 text-sm text-gray-500">
+        <li class="flex items-center gap-2">
+         <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg> Testes A/B</li>
+        <li class="flex items-center gap-2">
+         <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg> Mapas de Calor</li>
+        <li class="flex items-center gap-2">
+         <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg> Relatórios Mensais</li>
+       </ul>
       </div>
-     </div>
-     <div class="animate-slide-up" style="animation-delay: 0.2s;">
-      <h4 class="text-lg font-bold mb-4">Serviços</h4>
-      <ul class="space-y-2 text-gray-400">
-       <li><a href="#servicos" class="hover:text-blue-400 transition-colors">Sites Profissionais</a></li>
-       <li>E-commerce</li>
-       <li>Landing Pages</li>
-       <li>SEO Básico</li>
-      </ul>
      </div>
     </div>
-    <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-     <p>© 2024 <span id="copyright-company">TBN WEB</span>. Todos os direitos reservados.</p>
-     <p class="mt-2 text-sm" id="footer-cnpj">CNPJ: 32.554.785/0001-30</p>
+   </section><!-- CTA Section -->
+   <section class="py-20 px-6 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 relative overflow-hidden"><!-- Decorative Elements -->
+    <div class="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+     <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Pronto para Transformar seu Negócio?</h2>
+     <p class="text-blue-200 text-lg mb-10 max-w-2xl mx-auto">Não deixe sua concorrência sair na frente. Garanta agora sua landing page profissional e comece a converter mais clientes.</p>
+     <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-lg mx-auto mb-8">
+      <div class="flex items-center justify-center gap-3 mb-4">
+       <svg class="w-6 h-6 text-green-400" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+       </svg><span class="text-white font-semibold text-lg">Atendimento Imediato</span>
+      </div><a href="https://wa.me/5511918444743?text=Olá! Quero saber mais sobre os serviços da TBN WEB e garantir minha landing page!" target="_blank" rel="noopener noreferrer" class="block w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all transform hover:scale-105 mb-4"> <span class="flex items-center justify-center gap-2">
+        <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg> CHAMAR NO WHATSAPP </span> </a>
+      <p class="text-blue-300 text-sm">(11) 91844-4743 • Resposta em até 5 minutos</p>
+     </div><!-- Trust Badges -->
+     <div class="flex flex-wrap items-center justify-center gap-8 text-blue-300 text-sm">
+      <div class="flex items-center gap-2">
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+       </svg><span>Pagamento Seguro</span>
+      </div>
+      <div class="flex items-center gap-2">
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+       </svg><span>Entrega Rápida</span>
+      </div>
+      <div class="flex items-center gap-2">
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+       </svg><span>Suporte 24/7</span>
+      </div>
+     </div>
     </div>
-   </div>
-  </footer><!-- WhatsApp Flutuante -->
-  <div class="whatsapp-float"><button onclick="contactWhatsApp()" class="w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg" aria-label="Entrar em contato via WhatsApp"> <i class="fab fa-whatsapp text-white text-2xl" aria-hidden="true"></i> </button>
-  </div>
+   </section><!-- Footer -->
+   <footer class="bg-gray-900 text-gray-400 py-12 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
+      <div class="flex items-center gap-6"><a href="https://wa.me/5511918444743" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+        <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg></a>
+      </div>
+     </div>
+     <div class="border-t border-gray-800 pt-8 text-center text-sm">
+      <p class="mb-2">TBN WEB — Soluções Digitais de Alta Performance</p>
+      <p class="text-gray-500">CNPJ: 32.554.785.0001/30</p>
+      <p class="text-gray-600 mt-4">© 2024 TBN WEB. Todos os direitos reservados.</p>
+     </div>
+    </div>
+   </footer>
+  </div><!-- WhatsApp Floating Button --> <a href="https://wa.me/5511918444743?text=Olá! Vim pelo site e quero falar sobre landing pages!" target="_blank" rel="noopener noreferrer" class="whatsapp-float bg-green-500 hover:bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center transition-all duration-300">
+   <svg class="w-9 h-9" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+   </svg></a>
   <script>
-        // Configuração padrão
-        const defaultConfig = {
-            company_name: "TBN WEB",
-            hero_title: "Site Profissional Em Até 5 Dias",
-            hero_subtitle: "Site rápido, responsivo, seguro e com domínio incluso.",
-            original_price: "R$ 1.200",
-            promo_price: "R$ 549",
-            whatsapp_number: "(11) 99999-9999",
-            email_contact: "contato@tbnweb.com.br",
-            schedule: "Atendimento: Segunda a Sexta das 9h às 18h"
-        };
+    // Default Configuration
+    const defaultConfig = {
+      hero_title: 'Landing Pages que Convertem Visitantes em Clientes',
+      hero_subtitle: 'Desenvolvemos páginas de alta performance focadas em resultados. Design estratégico, copywriting persuasivo e otimização para máxima conversão.',
+      original_price: 'R$ 1.299,99',
+      promo_price: 'R$ 549,99',
+      services_title: 'Soluções Completas para seu Negócio',
+      cta_button_text: 'GARANTIR MINHA VAGA AGORA',
+      background_color: '#ffffff',
+      primary_color: '#1e40af',
+      text_color: '#111827',
+      accent_color: '#3b82f6',
+      cta_color: '#16a34a',
+      font_family: 'Plus Jakarta Sans',
+      font_size: 16
+    };
 
-        // Função para atualizar a interface
-        async function onConfigChange(config) {
-            const companyName = config.company_name || defaultConfig.company_name;
-            const heroTitle = config.hero_title || defaultConfig.hero_title;
-            const heroSubtitle = config.hero_subtitle || defaultConfig.hero_subtitle;
-            const originalPrice = config.original_price || defaultConfig.original_price;
-            const promoPrice = config.promo_price || defaultConfig.promo_price;
-            const whatsappNumber = config.whatsapp_number || defaultConfig.whatsapp_number;
-            const emailContact = config.email_contact || defaultConfig.email_contact;
-            const schedule = config.schedule || defaultConfig.schedule;
+    let config = { ...defaultConfig };
 
-            // Atualizar título com formatação especial
-            const heroTitleElement = document.getElementById('hero-title');
-            const titleParts = heroTitle.split('Em Até');
-            if (titleParts.length === 2) {
-                heroTitleElement.innerHTML = `<span class="block text-white animate-text-reveal">${titleParts[0].trim()}</span><span class="block text-blue-400 mt-2 animate-text-reveal">Em Até${titleParts[1]}</span>`;
-            } else {
-                heroTitleElement.innerHTML = `<span class="block text-white animate-text-reveal">${heroTitle}</span>`;
+    // Countdown Timer
+    function startCountdown() {
+      let hours = 3;
+      let minutes = 0;
+      let seconds = 0;
+
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+
+      function updateDisplay() {
+        const h = String(hours).padStart(2, '0');
+        const m = String(minutes).padStart(2, '0');
+        const s = String(seconds).padStart(2, '0');
+        
+        if (hoursEl) hoursEl.textContent = h;
+        if (minutesEl) minutesEl.textContent = m;
+        if (secondsEl) secondsEl.textContent = s;
+      }
+
+      function tick() {
+        if (seconds > 0) {
+          seconds--;
+        } else if (minutes > 0) {
+          minutes--;
+          seconds = 59;
+        } else if (hours > 0) {
+          hours--;
+          minutes = 59;
+          seconds = 59;
+        }
+        updateDisplay();
+      }
+
+      updateDisplay();
+      setInterval(tick, 1000);
+    }
+
+    // Config Change Handler
+    async function onConfigChange(newConfig) {
+      config = { ...defaultConfig, ...newConfig };
+      
+      // Update Hero Title
+      const heroTitle = document.getElementById('hero-title');
+      if (heroTitle) {
+        const titleParts = (config.hero_title || defaultConfig.hero_title).split(' ');
+        if (titleParts.length > 3) {
+          heroTitle.innerHTML = `${titleParts.slice(0, 3).join(' ')}<br><span class="text-blue-300">${titleParts.slice(3, 5).join(' ')}</span><br>${titleParts.slice(5).join(' ')}`;
+        } else {
+          heroTitle.textContent = config.hero_title || defaultConfig.hero_title;
+        }
+      }
+      
+      // Update Hero Subtitle
+      const heroSubtitle = document.getElementById('hero-subtitle');
+      if (heroSubtitle) {
+        heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+      }
+      
+      // Update Prices
+      const originalPrice = document.getElementById('original-price');
+      if (originalPrice) {
+        originalPrice.textContent = config.original_price || defaultConfig.original_price;
+      }
+      
+      const promoPrice = document.getElementById('promo-price');
+      if (promoPrice) {
+        promoPrice.textContent = config.promo_price || defaultConfig.promo_price;
+      }
+      
+      // Update Services Title
+      const servicesTitle = document.getElementById('services-title');
+      if (servicesTitle) {
+        servicesTitle.textContent = config.services_title || defaultConfig.services_title;
+      }
+      
+      // Update CTA Button
+      const ctaMain = document.getElementById('cta-main');
+      if (ctaMain) {
+        ctaMain.textContent = config.cta_button_text || defaultConfig.cta_button_text;
+      }
+      
+      // Apply Font
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      document.body.style.fontFamily = `${fontFamily}, sans-serif`;
+      
+      // Apply Font Size
+      const baseSize = config.font_size || defaultConfig.font_size;
+      document.body.style.fontSize = `${baseSize}px`;
+    }
+
+    // Map to Capabilities
+    function mapToCapabilities(cfg) {
+      return {
+        recolorables: [
+          {
+            get: () => cfg.background_color || defaultConfig.background_color,
+            set: (value) => {
+              cfg.background_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ background_color: value });
             }
-            
-            document.getElementById('hero-subtitle').textContent = heroSubtitle;
-            document.getElementById('price-display').textContent = promoPrice;
-            document.getElementById('original-price-display').textContent = originalPrice;
-            document.getElementById('promo-price-display').textContent = promoPrice;
-            document.getElementById('cta-price').textContent = promoPrice;
-            document.getElementById('footer-company-name').textContent = companyName;
-            document.getElementById('footer-whatsapp').textContent = whatsappNumber;
-            document.getElementById('footer-email').textContent = emailContact;
-            document.getElementById('copyright-company').textContent = companyName;
-            document.getElementById('schedule-top').textContent = schedule;
-            
-            // Atualizar horário do rodapé (versão resumida)
-            const scheduleFooter = schedule.replace('Atendimento: ', '').replace('Segunda a Sexta', 'Seg a Sex');
-            document.getElementById('schedule-footer').textContent = scheduleFooter;
-        }
-
-        // Inicializar SDK
-        if (window.elementSdk) {
-            window.elementSdk.init({
-                defaultConfig: defaultConfig,
-                onConfigChange: onConfigChange,
-                mapToCapabilities: (config) => ({
-                    recolorables: [],
-                    borderables: [],
-                    fontEditable: undefined,
-                    fontSizeable: undefined
-                }),
-                mapToEditPanelValues: (config) => new Map([
-                    ["company_name", config.company_name || defaultConfig.company_name],
-                    ["hero_title", config.hero_title || defaultConfig.hero_title],
-                    ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
-                    ["original_price", config.original_price || defaultConfig.original_price],
-                    ["promo_price", config.promo_price || defaultConfig.promo_price],
-                    ["whatsapp_number", config.whatsapp_number || defaultConfig.whatsapp_number],
-                    ["email_contact", config.email_contact || defaultConfig.email_contact],
-                    ["schedule", config.schedule || defaultConfig.schedule]
-                ])
-            });
-        }
-
-        // Carrossel 3D
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const indicators = document.querySelectorAll('.indicator');
-        const totalSlides = slides.length;
-
-        function updateCarousel() {
-            slides.forEach((slide, index) => {
-                slide.classList.remove('active', 'prev', 'next', 'hidden');
-                
-                if (index === currentSlide) {
-                    slide.classList.add('active');
-                } else if (index === (currentSlide - 1 + totalSlides) % totalSlides) {
-                    slide.classList.add('prev');
-                } else if (index === (currentSlide + 1) % totalSlides) {
-                    slide.classList.add('next');
-                } else {
-                    slide.classList.add('hidden');
-                }
-            });
-
-            indicators.forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === currentSlide);
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateCarousel();
-        }
-
-        function goToSlide(index) {
-            currentSlide = index;
-            updateCarousel();
-        }
-
-        // Auto-play do carrossel
-        let autoPlayInterval = setInterval(nextSlide, 5000);
-
-        // Pausar auto-play ao interagir
-        const carouselContainer = document.querySelector('.carousel-container');
-        if (carouselContainer) {
-            carouselContainer.addEventListener('mouseenter', () => {
-                clearInterval(autoPlayInterval);
-            });
-
-            carouselContainer.addEventListener('mouseleave', () => {
-                autoPlayInterval = setInterval(nextSlide, 5000);
-            });
-        }
-
-        // Funções de navegação
-        function scrollToOffer() {
-            // Event snippet for TBN WEB - PIXEL conversion page
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-17758751378/-qgeCNjrr-obEJKVhJRC',
-                    'value': 1.0,
-                    'currency': 'BRL',
-                    'transaction_id': ''
-                });
+          },
+          {
+            get: () => cfg.primary_color || defaultConfig.primary_color,
+            set: (value) => {
+              cfg.primary_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ primary_color: value });
             }
-            
-            document.getElementById('oferta').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function scrollToServices() {
-            // Event snippet for TBN WEB - PIXEL conversion page
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-17758751378/-qgeCNjrr-obEJKVhJRC',
-                    'value': 1.0,
-                    'currency': 'BRL',
-                    'transaction_id': ''
-                });
+          },
+          {
+            get: () => cfg.text_color || defaultConfig.text_color,
+            set: (value) => {
+              cfg.text_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ text_color: value });
             }
-            
-            document.getElementById('servicos').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const button = document.querySelector('[aria-controls="mobile-menu"]');
-            const isHidden = menu.classList.contains('hidden');
-            
-            menu.classList.toggle('hidden');
-            
-            if (button) {
-                button.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
-                button.setAttribute('aria-label', isHidden ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+          },
+          {
+            get: () => cfg.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              cfg.accent_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ accent_color: value });
             }
-        }
-
-        function contactWhatsApp() {
-            // Event snippet for TBN WEB - PIXEL conversion page
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-17758751378/-qgeCNjrr-obEJKVhJRC',
-                    'value': 1.0,
-                    'currency': 'BRL',
-                    'transaction_id': ''
-                });
+          },
+          {
+            get: () => cfg.cta_color || defaultConfig.cta_color,
+            set: (value) => {
+              cfg.cta_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ cta_color: value });
             }
-            
-            const whatsappNumber = '11918444743';
-            const message = encodeURIComponent(`Olá! Tenho interesse nos serviços da TBN WEB. Gostaria de mais informações!`);
-            window.open(`https://wa.me/55${whatsappNumber}?text=${message}`, '_blank', 'noopener,noreferrer');
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => cfg.font_family || defaultConfig.font_family,
+          set: (value) => {
+            cfg.font_family = value;
+            if (window.elementSdk) window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => cfg.font_size || defaultConfig.font_size,
+          set: (value) => {
+            cfg.font_size = value;
+            if (window.elementSdk) window.elementSdk.setConfig({ font_size: value });
+          }
         }
+      };
+    }
 
-        function toggleFAQ(id) {
-            const faq = document.getElementById(`faq-${id}`);
-            const icon = document.getElementById(`icon-${id}`);
-            
-            faq.classList.toggle('hidden');
-            icon.classList.toggle('rotate-180');
-        }
+    // Map to Edit Panel Values
+    function mapToEditPanelValues(cfg) {
+      return new Map([
+        ['hero_title', cfg.hero_title || defaultConfig.hero_title],
+        ['hero_subtitle', cfg.hero_subtitle || defaultConfig.hero_subtitle],
+        ['original_price', cfg.original_price || defaultConfig.original_price],
+        ['promo_price', cfg.promo_price || defaultConfig.promo_price],
+        ['services_title', cfg.services_title || defaultConfig.services_title],
+        ['cta_button_text', cfg.cta_button_text || defaultConfig.cta_button_text]
+      ]);
+    }
 
-        // Contador regressivo
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const endTime = now + (15 * 60 * 1000); // 15 minutos
-            
-            setInterval(() => {
-                const currentTime = new Date().getTime();
-                const timeLeft = endTime - currentTime;
-                
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                
-                const minutesElement = document.getElementById('countdown-minutes');
-                const secondsElement = document.getElementById('countdown-seconds');
-                
-                if (minutesElement && secondsElement) {
-                    minutesElement.textContent = minutes.toString().padStart(2, '0');
-                    secondsElement.textContent = seconds.toString().padStart(2, '0');
-                    
-                    if (timeLeft < 0) {
-                        minutesElement.textContent = "00";
-                        secondsElement.textContent = "00";
-                    }
-                }
-            }, 1000);
-        }
+    // Initialize
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
 
-        // Sistema de animação ao scroll otimizado
-        function initScrollAnimations() {
-            const animatedCards = document.querySelectorAll('.card-animate');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            });
-            
-            animatedCards.forEach(card => {
-                observer.observe(card);
-            });
-        }
-
-        // Inicializar quando a página carregar
-        document.addEventListener('DOMContentLoaded', () => {
-            updateCountdown();
-            initScrollAnimations();
-            updateCarousel();
-        });
-    </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c1febf5929e8046',t:'MTc2OTA5NDAzNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    startCountdown();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c47632be3b3f17b',t:'MTc2OTUwNzg2Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
