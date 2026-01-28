@@ -305,7 +305,73 @@
    </footer>
   </div><!-- WhatsApp Floating Button --> <a href="https://wa.me/5511918444743?text=Olá! Vim pelo site e quero falar sobre landing pages!" target="_blank" rel="noopener noreferrer" class="whatsapp-float bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center transition-all duration-300">
    <svg class="w-8 h-8 sm:w-9 sm:h-9" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-   </svg></a>
+   </svg></a> <!-- Admin Panel (Hidden) -->
+  <div id="admin-panel" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] hidden items-center justify-center p-4">
+   <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90%] overflow-hidden flex flex-col"><!-- Header -->
+    <div class="bg-gradient-to-r from-blue-900 to-blue-700 text-white px-6 py-4 flex items-center justify-between">
+     <div class="flex items-center gap-3">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+      </svg>
+      <h2 class="text-xl font-bold">Painel Admin</h2>
+     </div><button id="close-admin" class="hover:bg-white/20 rounded-lg p-2 transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg></button>
+    </div><!-- Content -->
+    <div class="flex-1 overflow-y-auto p-6">
+     <div class="space-y-6"><!-- Hero Section -->
+      <div class="bg-gray-50 rounded-xl p-6">
+       <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+        </svg> Seção Hero</h3>
+       <div class="space-y-4">
+        <div><label class="block text-sm font-semibold text-gray-700 mb-2">Título Principal</label> <textarea id="edit-hero-title" rows="3" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"></textarea>
+        </div>
+        <div><label class="block text-sm font-semibold text-gray-700 mb-2">Subtítulo</label> <textarea id="edit-hero-subtitle" rows="3" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"></textarea>
+        </div>
+       </div>
+      </div><!-- Pricing Section -->
+      <div class="bg-gray-50 rounded-xl p-6">
+       <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg> Preços</h3>
+       <div class="grid sm:grid-cols-2 gap-4">
+        <div><label class="block text-sm font-semibold text-gray-700 mb-2">Preço Original</label> <input type="text" id="edit-original-price" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+        </div>
+        <div><label class="block text-sm font-semibold text-gray-700 mb-2">Preço Promocional</label> <input type="text" id="edit-promo-price" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+        </div>
+       </div>
+      </div><!-- Services Section -->
+      <div class="bg-gray-50 rounded-xl p-6">
+       <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        </svg> Seção Serviços</h3>
+       <div><label class="block text-sm font-semibold text-gray-700 mb-2">Título da Seção</label> <input type="text" id="edit-services-title" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+       </div>
+      </div><!-- CTA Section -->
+      <div class="bg-gray-50 rounded-xl p-6">
+       <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+        </svg> Botão de Ação</h3>
+       <div><label class="block text-sm font-semibold text-gray-700 mb-2">Texto do Botão Principal</label> <input type="text" id="edit-cta-button" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+       </div>
+      </div><!-- Contact Section -->
+      <div class="bg-gray-50 rounded-xl p-6">
+       <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <svg class="w-5 h-5 text-green-600" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg> WhatsApp</h3>
+       <div><label class="block text-sm font-semibold text-gray-700 mb-2">Número do WhatsApp</label> <input type="text" id="edit-whatsapp" placeholder="5511918444743" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+        <p class="text-xs text-gray-500 mt-1">Apenas números com código do país (ex: 5511912345678)</p>
+       </div>
+      </div>
+     </div>
+    </div><!-- Footer -->
+    <div class="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-200">
+     <p class="text-sm text-gray-500">Digite "admin" em qualquer lugar para abrir</p><button id="save-admin" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-all transform hover:scale-105 flex items-center gap-2">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+      </svg> Salvar Alterações </button>
+    </div>
+   </div>
+  </div>
   <script>
     // Default Configuration
     const defaultConfig = {
@@ -498,6 +564,118 @@
     }
 
     startCountdown();
+
+    // Admin Panel Functionality
+    let adminKeyBuffer = '';
+    let whatsappNumber = '5511918444743';
+    
+    // Listen for "admin" keyword
+    document.addEventListener('keypress', (e) => {
+      adminKeyBuffer += e.key.toLowerCase();
+      
+      // Keep buffer small (only last 10 chars)
+      if (adminKeyBuffer.length > 10) {
+        adminKeyBuffer = adminKeyBuffer.slice(-10);
+      }
+      
+      // Check if buffer contains "admin"
+      if (adminKeyBuffer.includes('admin')) {
+        openAdminPanel();
+        adminKeyBuffer = ''; // Reset buffer
+      }
+    });
+
+    function openAdminPanel() {
+      const panel = document.getElementById('admin-panel');
+      if (panel) {
+        panel.classList.remove('hidden');
+        panel.classList.add('flex');
+        
+        // Populate fields with current values
+        document.getElementById('edit-hero-title').value = config.hero_title || defaultConfig.hero_title;
+        document.getElementById('edit-hero-subtitle').value = config.hero_subtitle || defaultConfig.hero_subtitle;
+        document.getElementById('edit-original-price').value = config.original_price || defaultConfig.original_price;
+        document.getElementById('edit-promo-price').value = config.promo_price || defaultConfig.promo_price;
+        document.getElementById('edit-services-title').value = config.services_title || defaultConfig.services_title;
+        document.getElementById('edit-cta-button').value = config.cta_button_text || defaultConfig.cta_button_text;
+        document.getElementById('edit-whatsapp').value = whatsappNumber;
+      }
+    }
+
+    function closeAdminPanel() {
+      const panel = document.getElementById('admin-panel');
+      if (panel) {
+        panel.classList.add('hidden');
+        panel.classList.remove('flex');
+      }
+    }
+
+    // Close button
+    document.getElementById('close-admin').addEventListener('click', closeAdminPanel);
+
+    // Close on background click
+    document.getElementById('admin-panel').addEventListener('click', (e) => {
+      if (e.target.id === 'admin-panel') {
+        closeAdminPanel();
+      }
+    });
+
+    // Save button
+    document.getElementById('save-admin').addEventListener('click', () => {
+      // Update config
+      const newConfig = {
+        hero_title: document.getElementById('edit-hero-title').value,
+        hero_subtitle: document.getElementById('edit-hero-subtitle').value,
+        original_price: document.getElementById('edit-original-price').value,
+        promo_price: document.getElementById('edit-promo-price').value,
+        services_title: document.getElementById('edit-services-title').value,
+        cta_button_text: document.getElementById('edit-cta-button').value
+      };
+
+      // Update WhatsApp number
+      const newWhatsapp = document.getElementById('edit-whatsapp').value;
+      if (newWhatsapp && newWhatsapp.trim()) {
+        whatsappNumber = newWhatsapp.trim();
+        
+        // Update all WhatsApp links
+        const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
+        whatsappLinks.forEach(link => {
+          const currentHref = link.getAttribute('href');
+          const textParam = currentHref.split('?text=')[1] || '';
+          link.setAttribute('href', `https://wa.me/${whatsappNumber}?text=${textParam}`);
+        });
+      }
+
+      // Apply changes via SDK
+      if (window.elementSdk) {
+        window.elementSdk.setConfig(newConfig);
+      } else {
+        // Fallback if SDK not available
+        Object.assign(config, newConfig);
+        onConfigChange(config);
+      }
+
+      // Close panel
+      closeAdminPanel();
+
+      // Show success message
+      const saveBtn = document.getElementById('save-admin');
+      const originalText = saveBtn.innerHTML;
+      saveBtn.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Salvo!';
+      saveBtn.classList.add('bg-green-600');
+      
+      setTimeout(() => {
+        saveBtn.innerHTML = originalText;
+        saveBtn.classList.remove('bg-green-600');
+      }, 2000);
+    });
+
+    // ESC key to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeAdminPanel();
+      }
+    });
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c476a03729df17b',t:'MTc2OTUwODE0Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c4f6e86d3bb9a7f',t:'MTc2OTU5MjIxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
