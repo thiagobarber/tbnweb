@@ -1,380 +1,580 @@
 <!doctype html>
-<html lang="pt-BR" class="h-full">
+<html lang="pt-BR" class="h-full scroll-smooth">
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mare Agência | Gestão de Mídias Sociais</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/_sdk/element_sdk.js"></script>
+  <title>TBNTV – Painel NetPlay | Revenda IPTV</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script><!-- Google Ads Conversion Tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17758751378"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17758751378');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet">
   <style>
-    body {
-      box-sizing: border-box;
-    }
-    * {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: 'Inter', sans-serif; }
+    
     .gradient-text {
-      background: linear-gradient(135deg, #0066CC 0%, #0099FF 100%);
+      background: linear-gradient(135deg, #22c55e 0%, #10b981 50%, #06b6d4 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .btn-gradient {
-      background: linear-gradient(135deg, #0066CC 0%, #0088EE 50%, #0099FF 100%);
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+    
+    .card-glow {
+      box-shadow: 0 0 40px rgba(34, 197, 94, 0.1);
+      will-change: box-shadow;
     }
-    .btn-gradient:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 102, 204, 0.4);
+    
+    .card-glow:hover {
+      box-shadow: 0 0 60px rgba(34, 197, 94, 0.2);
     }
-    .card-hover {
-      transition: all 0.3s ease;
+    
+    .pulse-glow {
+      animation: pulseGlow 2s ease-in-out infinite;
+      will-change: box-shadow;
     }
-    .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 102, 204, 0.15);
+    
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.4); }
+      50% { box-shadow: 0 0 40px rgba(34, 197, 94, 0.8); }
     }
-    .fade-in {
-      animation: fadeIn 0.8s ease-out forwards;
-      opacity: 0;
-    }
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-    .slide-up {
-      animation: slideUp 0.8s ease-out forwards;
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    @keyframes slideUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .delay-1 { animation-delay: 0.1s; }
-    .delay-2 { animation-delay: 0.2s; }
-    .delay-3 { animation-delay: 0.3s; }
-    .delay-4 { animation-delay: 0.4s; }
-    .pulse-subtle {
-      animation: pulseSub 2s ease-in-out infinite;
-    }
-    @keyframes pulseSub {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-    .float {
+    
+    .float-animation {
       animation: float 3s ease-in-out infinite;
+      will-change: transform;
     }
+    
     @keyframes float {
-      0%, 100% { transform: translateY(0px); }
+      0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
-    .glow {
-      animation: glow 2s ease-in-out infinite alternate;
+    
+    .hero-section {
+      background: linear-gradient(to bottom, 
+        rgba(3, 7, 18, 0.92) 0%,
+        rgba(5, 12, 20, 0.90) 8%,
+        rgba(8, 18, 24, 0.88) 16%,
+        rgba(12, 25, 30, 0.85) 24%,
+        rgba(16, 32, 36, 0.82) 32%,
+        rgba(20, 40, 42, 0.78) 40%,
+        rgba(28, 55, 55, 0.72) 48%,
+        rgba(35, 70, 68, 0.62) 56%,
+        rgba(45, 80, 75, 0.48) 64%,
+        rgba(55, 90, 85, 0.32) 72%,
+        rgba(65, 100, 95, 0.15) 80%,
+        rgba(70, 105, 100, 0.06) 88%,
+        rgba(17, 24, 39, 0.8) 95%,
+        rgba(17, 24, 39, 1) 100%), 
+        url('https://imgur.com/F9n5WBp.jpg') center/cover no-repeat;
+      background-attachment: scroll;
+      min-height: 100vh;
     }
-    @keyframes glow {
-      from { box-shadow: 0 0 20px rgba(0, 102, 204, 0.3); }
-      to { box-shadow: 0 0 30px rgba(0, 102, 204, 0.6), 0 0 40px rgba(0, 153, 255, 0.4); }
+    
+    .btn-hero {
+      will-change: transform;
+      transition: all 0.2s ease-out;
     }
-    .scale-in {
-      animation: scaleIn 0.6s ease-out forwards;
-      opacity: 0;
-      transform: scale(0.9);
+    
+    .btn-hero:active {
+      transform: scale(0.98);
     }
-    @keyframes scaleIn {
-      to { opacity: 1; transform: scale(1); }
+    
+    @media (hover: hover) {
+      .btn-hero:hover {
+        transform: scale(1.05);
+      }
     }
-    .slide-right {
-      animation: slideRight 0.8s ease-out forwards;
-      opacity: 0;
-      transform: translateX(-30px);
-    }
-    @keyframes slideRight {
-      to { opacity: 1; transform: translateX(0); }
-    }
-    .slide-left {
-      animation: slideLeft 0.8s ease-out forwards;
-      opacity: 0;
-      transform: translateX(30px);
-    }
-    @keyframes slideLeft {
-      to { opacity: 1; transform: translateX(0); }
-    }
-    .rotate-in {
-      animation: rotateIn 0.8s ease-out forwards;
-      opacity: 0;
-      transform: rotate(-5deg) scale(0.9);
-    }
-    @keyframes rotateIn {
-      to { opacity: 1; transform: rotate(0deg) scale(1); }
-    }
-    .border-animate {
-      position: relative;
-      overflow: hidden;
-    }
-    .border-animate::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(45deg, #0066CC, #0099FF, #0066CC);
-      border-radius: inherit;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: -1;
-      animation: borderRotate 3s linear infinite;
-    }
-    @keyframes borderRotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    .border-animate:hover::before {
-      opacity: 1;
-    }
-    .shimmer {
-      position: relative;
-      overflow: hidden;
-    }
-    .shimmer::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      animation: shimmer 3s infinite;
-    }
-    @keyframes shimmer {
-      0% { left: -100%; }
-      100% { left: 100%; }
-    }
-    .gradient-animate {
-      background-size: 200% 200%;
-      animation: gradientShift 4s ease infinite;
-    }
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    
+    svg { display: block; }
+    img { display: block; }
+    
+    .smooth-transition {
+      transition: color 0.2s ease-out, background-color 0.2s ease-out;
     }
   </style>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <style>body { box-sizing: border-box; }</style>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
-  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
- <body class="h-full bg-white text-gray-900">
-  <div id="app" class="w-full h-full overflow-auto">
-   <!-- Header -->
-   <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-     <div class="flex items-center gap-3">
-      <img src="https://imgur.com/6bsibIg.png" alt="Mare Logo" class="w-12 h-12 float" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#0066CC'; this.alt='Mare Logo unavailable';">
+ <body class="h-full bg-gray-950 text-white overflow-auto">
+  <div class="w-full min-h-full"><!-- HERO SECTION -->
+   <section class="hero-section relative flex items-center justify-center px-4 py-16 sm:py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
+    <div class="absolute top-0 left-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-green-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-64 h-64 sm:w-80 sm:h-80 bg-emerald-500/5 rounded-full blur-3xl"></div>
+    <div class="relative z-10 text-center max-w-4xl mx-auto w-full"><!-- Logo Badge -->
+     <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-full mb-6 sm:mb-8 backdrop-blur-sm text-xs sm:text-sm">
+      <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div><span class="text-gray-300 font-medium">TBNTV – Painel NetPlay</span>
+     </div><!-- Main Title -->
+     <h1 id="hero-title" class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">Ganhe dinheiro<br><span class="gradient-text">revendendo IPTV</span></h1><!-- Subtitle -->
+     <p id="hero-subtitle" class="text-base sm:text-lg text-gray-300 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">Painel NetPlay com créditos baratos e ativação rápida. Comece sua jornada como revendedor hoje mesmo.</p><!-- CTA Button --> <button onclick="trackPixel(); const msg = encodeURIComponent('Olá! Gostaria de começar a revender IPTV com o Painel NetPlay. Pode me ajudar?'); window.open('https://wa.me/5511971128018?text=' + msg, '_blank'); return false;" class="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-semibold text-sm sm:text-lg rounded-xl btn-hero pulse-glow">
+      <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg><span class="hidden sm:inline">Falar no WhatsApp</span> <span class="sm:hidden">WhatsApp</span> </button> <!-- Trust Badges -->
+     <div class="mt-8 sm:mt-12 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-gray-400 text-xs sm:text-sm">
+      <div class="flex items-center gap-2">
+       <svg class="w-4 h-4 sm:w-5 sm:h-5 text-green-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+       </svg><span>Seguro</span>
+      </div>
+      <div class="flex items-center gap-2">
+       <svg class="w-4 h-4 sm:w-5 sm:h-5 text-green-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+       </svg><span>Rápido</span>
+      </div>
+      <div class="flex items-center gap-2">
+       <svg class="w-4 h-4 sm:w-5 sm:h-5 text-green-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+       </svg><span>Suporte</span>
+      </div>
      </div>
+    </div><!-- Scroll Indicator -->
+    <div class="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 float-animation hidden sm:block">
+     <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gray-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+     </svg>
     </div>
-   </header><!-- Hero Section -->
-   <section class="pt-32 pb-20 px-6 relative overflow-hidden" style="background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWM2NHR2bWQ5NHRsbjZxZjVhYzZneXVvMGo0MXIzcWY0cjJmbXF1YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zO9McZZQd4o4cKnREV/giphy.gif'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <div class="absolute inset-0 bg-gradient-to-b from-blue-50/30 via-white/40 to-white z-0"></div>
-    <div class="max-w-6xl mx-auto relative z-10">
-     <div class="max-w-3xl mx-auto text-center">
-      <div class="slide-up scale-in">
-       <span class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 text-sm font-medium rounded-full mb-6 shimmer">
-        <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20">
-         <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
-        </svg> Especialistas em Social Media </span>
-      </div>
-      <h1 id="hero-title" class="slide-up delay-1 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">Transforme suas <span class="gradient-text">Redes Sociais</span> em uma Máquina de Vendas</h1>
-      <p id="hero-subtitle" class="slide-up delay-2 text-lg sm:text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto">Gestão profissional de mídias sociais que atrai, engaja e converte seguidores em clientes fiéis. Resultados mensuráveis, estratégias comprovadas.</p>
-      <div class="slide-up delay-3 flex flex-col sm:flex-row gap-4 justify-center items-center">
-       <a href="https://wa.me/5511954432023" target="_blank" rel="noopener noreferrer" class="btn-gradient pulse-subtle glow px-8 py-4 rounded-xl text-white font-semibold text-lg flex items-center gap-3 w-full sm:w-auto justify-center" onclick="gtag('event', 'conversion', {'send_to': 'AW-18024459039/BNmgCMbE8YocEJ_W3ZJD', 'value': 1.0, 'currency': 'BRL', 'transaction_id': ''});">
-        <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
-         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-        </svg><span id="cta-text">Quero Resultados Agora</span> </a>
-      </div>
-      <div class="slide-up delay-4 mt-12 flex items-center justify-center gap-8 text-sm text-gray-500">
-       <div class="flex items-center gap-2">
-        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewbox="0 0 20 20">
-         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-        </svg><span>+50 Clientes Ativos</span>
-       </div>
-       <div class="flex items-center gap-2">
-        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewbox="0 0 20 20">
-         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-        </svg><span>8+ Anos de Experiência</span>
-       </div>
-      </div>
+   </section><!-- PLANS SECTION -->
+   <section class="relative py-12 sm:py-20 px-4" style="background: linear-gradient(to bottom, #00040E, #111827);">
+    <div class="absolute top-0 left-0 right-0 h-32 sm:h-48 bg-gradient-to-b from-emerald-900/40 via-emerald-900/20 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-6xl mx-auto"><!-- Section Header -->
+     <div class="text-center mb-10 sm:mb-16"><span class="inline-block px-3 sm:px-4 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-xs sm:text-sm font-medium mb-3 sm:mb-4"> 💰 Tabela de Preços </span>
+      <h2 id="plans-title" class="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">Nossos <span class="gradient-text">Planos</span></h2>
+      <p class="text-gray-400 max-w-xl mx-auto text-sm sm:text-base">Ideal para quem quer começar a revender IPTV e gerar renda extra todos os meses.</p>
      </div>
-    </div>
-   </section><!-- Services Section -->
-   <section class="py-20 px-6 bg-white">
-    <div class="max-w-6xl mx-auto">
-     <div class="text-center mb-16">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-4">O que <span class="gradient-text">entregamos</span></h2>
-      <p class="text-gray-600 text-lg max-w-2xl mx-auto">Soluções completas para posicionar sua marca e gerar resultados reais nas redes sociais</p>
-     </div>
-     <div class="grid md:grid-cols-3 gap-8">
-      <!-- Card 1 -->
-      <div class="card-hover border-animate bg-white border border-gray-100 rounded-2xl p-8 shadow-sm slide-up delay-1">
-       <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 rotate-in">
-        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-        </svg>
-       </div>
-       <h3 class="text-xl font-bold mb-3">Gestão Completa</h3>
-       <p class="text-gray-600 leading-relaxed">Criação de conteúdo, planejamento estratégico, agendamento e monitoramento diário das suas redes sociais.</p>
-      </div><!-- Card 2 -->
-      <div class="card-hover border-animate bg-white border border-gray-100 rounded-2xl p-8 shadow-sm slide-up delay-2">
-       <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 rotate-in delay-1">
-        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
-       </div>
-       <h3 class="text-xl font-bold mb-3">Tráfego Pago</h3>
-       <p class="text-gray-600 leading-relaxed">Campanhas otimizadas no Meta Ads e Google Ads para atrair clientes qualificados e aumentar suas vendas.</p>
-      </div><!-- Card 3 -->
-      <div class="card-hover border-animate bg-white border border-gray-100 rounded-2xl p-8 shadow-sm slide-up delay-3">
-       <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 rotate-in delay-2">
-        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-       </div>
-       <h3 class="text-xl font-bold mb-3">Design Profissional</h3>
-       <p class="text-gray-600 leading-relaxed">Artes exclusivas e identidade visual consistente que destacam sua marca e geram reconhecimento.</p>
-      </div>
-     </div>
-    </div>
-   </section><!-- Social Proof Section -->
-   <section class="py-20 px-6 bg-gradient-to-b from-gray-50 to-white">
-    <div class="max-w-6xl mx-auto">
-     <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden scale-in">
-      <div class="grid md:grid-cols-2">
-       <div class="p-10 lg:p-14 flex flex-col justify-center slide-right">
-        <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-4">Por que a Mare?</span>
-        <h2 class="text-3xl sm:text-4xl font-bold mb-6">Resultados que <span class="gradient-text">falam por si</span></h2>
-        <p class="text-gray-600 text-lg mb-8 leading-relaxed">Não prometemos milagres. Entregamos estratégias testadas e validadas que já transformaram dezenas de negócios como o seu.</p>
-        <div class="grid grid-cols-2 gap-6 mb-8">
-         <div class="scale-in delay-1">
-          <div class="text-4xl font-extrabold text-blue-600 mb-1">
-           300%
-          </div>
-          <p class="text-gray-600 text-sm">Aumento médio de engajamento</p>
-         </div>
-         <div class="scale-in delay-2">
-          <div class="text-4xl font-extrabold text-blue-600 mb-1">
-           +2M
-          </div>
-          <p class="text-gray-600 text-sm">Alcance mensal gerado</p>
-         </div>
-         <div class="scale-in delay-3">
-          <div class="text-4xl font-extrabold text-blue-600 mb-1">
-           50+
-          </div>
-          <p class="text-gray-600 text-sm">Marcas transformadas</p>
-         </div>
-         <div class="scale-in delay-4">
-          <div class="text-4xl font-extrabold text-blue-600 mb-1">
-           98%
-          </div>
-          <p class="text-gray-600 text-sm">Taxa de satisfação</p>
-         </div>
+     <div class="grid md:grid-cols-2 gap-6 sm:gap-8"><!-- Créditos Avulsos Card -->
+      <div class="bg-gray-900/50 border border-gray-800 rounded-xl sm:rounded-2xl p-6 sm:p-8 card-glow transition-all duration-300 backdrop-blur-sm">
+       <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+         <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+         </svg>
         </div>
-        <div class="space-y-3 slide-right">
-         <div class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="currentColor" viewbox="0 0 20 20">
-           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-          </svg><span class="text-gray-700 text-sm font-medium">Estratégia personalizada para seu nicho</span>
-         </div>
-         <div class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="currentColor" viewbox="0 0 20 20">
-           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-          </svg><span class="text-gray-700 text-sm font-medium">Relatórios mensais detalhados e transparentes</span>
-         </div>
-         <div class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="currentColor" viewbox="0 0 20 20">
-           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-          </svg><span class="text-gray-700 text-sm font-medium">Suporte dedicado 24/7 e consultoria ativa</span>
-         </div>
+        <div class="min-w-0">
+         <h3 class="font-heading text-lg sm:text-xl font-bold text-white">Créditos Avulsos</h3>
+         <p class="text-xs sm:text-sm text-gray-400">Compre conforme sua necessidade</p>
         </div>
        </div>
-       <div class="bg-gradient-to-br from-blue-600 to-blue-700 gradient-animate p-10 lg:p-14 flex flex-col justify-center text-white slide-left">
-        <svg class="w-12 h-12 text-blue-300 mb-6 opacity-50 float" fill="currentColor" viewbox="0 0 24 24">
-         <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-        </svg>
-        <p class="text-xl lg:text-2xl font-medium leading-relaxed mb-6">"A Mare transformou completamente nossa presença digital. Em 3 meses, triplicamos nossos leads e dobramos o faturamento."</p>
-        <div>
-         <p class="font-bold">Marina Santos</p>
-         <p class="text-blue-200 text-sm">CEO, Studio Beauty</p>
+       <div class="space-y-3 sm:space-y-4">
+        <div class="flex items-center justify-between p-3 sm:p-4 bg-gray-800/50 rounded-lg sm:rounded-xl border border-gray-700/50 text-sm sm:text-base">
+         <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+          <div class="w-6 h-6 sm:w-8 sm:h-8 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0"><span class="text-blue-400 font-bold text-xs sm:text-sm">10</span>
+          </div><span class="text-gray-300 text-xs sm:text-sm">10 a 19</span>
+         </div><span class="text-lg sm:text-xl font-bold text-white text-right">R$ 8</span>
+        </div>
+        <div class="flex items-center justify-between p-3 sm:p-4 bg-gray-800/50 rounded-lg sm:rounded-xl border border-gray-700/50 text-sm sm:text-base">
+         <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+          <div class="w-6 h-6 sm:w-8 sm:h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0"><span class="text-cyan-400 font-bold text-xs sm:text-sm">20</span>
+          </div><span class="text-gray-300 text-xs sm:text-sm">20 a 49</span>
+         </div><span class="text-lg sm:text-xl font-bold text-white text-right">R$ 7,50</span>
+        </div>
+        <div class="flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-lg sm:rounded-xl border border-green-500/30 text-sm sm:text-base">
+         <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+          <div class="w-6 h-6 sm:w-8 sm:h-8 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0"><span class="text-green-400 font-bold text-xs sm:text-sm">50</span>
+          </div>
+          <div class="min-w-0"><span class="text-gray-300 text-xs sm:text-sm">50 a 100</span> <span class="ml-2 px-2 py-0.5 bg-green-500/20 text-green-400 text-xs rounded-full inline-block">TOP</span>
+          </div>
+         </div><span class="text-lg sm:text-xl font-bold text-green-400 text-right">R$ 6</span>
+        </div>
+       </div><button onclick="trackPixel(); const msg = encodeURIComponent('Olá! Gostaria de comprar créditos avulsos para revender. Quais são as opcões disponíveis?'); window.open('https://wa.me/5511971128018?text=' + msg, '_blank'); return false;" class="w-full mt-6 sm:mt-8 px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-semibold text-sm sm:text-base rounded-lg sm:rounded-xl btn-hero transition-all duration-300"> Comprar Créditos </button>
+      </div><!-- Benefícios Card -->
+      <div class="bg-gradient-to-br from-gray-900/80 to-gray-800/50 border border-green-500/30 rounded-xl sm:rounded-2xl p-6 sm:p-8 card-glow transition-all duration-300 backdrop-blur-sm">
+       <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+         <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+         </svg>
+        </div>
+        <div class="min-w-0">
+         <h3 class="font-heading text-lg sm:text-xl font-bold text-white">Por que escolher a gente?</h3>
+         <p class="text-xs sm:text-sm text-gray-400">Diferenciais exclusivos</p>
+        </div>
+       </div>
+       <div class="space-y-3 sm:space-y-4">
+        <div class="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gray-800/50 rounded-lg sm:rounded-xl border border-gray-700/50">
+         <div class="w-5 h-5 sm:w-6 sm:h-6 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-3 h-3 sm:w-4 sm:h-4 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+         </div>
+         <div class="min-w-0">
+          <p class="text-gray-300 font-medium text-xs sm:text-sm">Ativação em minutos</p>
+          <p class="text-xs text-gray-500 mt-1">Comece a revender no mesmo dia</p>
+         </div>
+        </div>
+        <div class="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gray-800/50 rounded-lg sm:rounded-xl border border-gray-700/50">
+         <div class="w-5 h-5 sm:w-6 sm:h-6 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-3 h-3 sm:w-4 sm:h-4 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+         </div>
+         <div class="min-w-0">
+          <p class="text-gray-300 font-medium text-xs sm:text-sm">Suporte 24/7</p>
+          <p class="text-xs text-gray-500 mt-1">Dúvidas? Estamos aqui para ajudar</p>
+         </div>
+        </div>
+        <div class="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gray-800/50 rounded-lg sm:rounded-xl border border-gray-700/50">
+         <div class="w-5 h-5 sm:w-6 sm:h-6 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-3 h-3 sm:w-4 sm:h-4 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+         </div>
+         <div class="min-w-0">
+          <p class="text-gray-300 font-medium text-xs sm:text-sm">Plataforma confiável</p>
+          <p class="text-xs text-gray-500 mt-1">Milhares de revendedores satisfeitos</p>
+         </div>
+        </div>
+        <div class="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-lg sm:rounded-xl border border-green-500/30">
+         <div class="w-5 h-5 sm:w-6 sm:h-6 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-3 h-3 sm:w-4 sm:h-4 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+         </div>
+         <div class="min-w-0">
+          <p class="text-gray-300 font-medium text-xs sm:text-sm">Melhores preços</p>
+          <p class="text-xs text-green-400 mt-1">Créditos com valores reduzidos</p>
+         </div>
         </div>
        </div>
       </div>
      </div>
     </div>
-   </section><!-- CTA Final Section -->
-   <section class="py-20 px-6 bg-white">
-    <div class="max-w-4xl mx-auto text-center">
-     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Pronto para <span class="gradient-text">escalar</span> seu negócio?</h2>
-     <p class="text-gray-600 text-lg mb-10 max-w-2xl mx-auto">Agende uma consultoria gratuita e descubra como podemos transformar suas redes sociais em um canal de vendas previsível.</p>
-     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-      <a href="https://wa.me/5511954432023" target="_blank" rel="noopener noreferrer" class="btn-gradient glow px-10 py-5 rounded-xl text-white font-semibold text-lg flex items-center gap-3 w-full sm:w-auto justify-center pulse-subtle scale-in" onclick="gtag('event', 'conversion', {'send_to': 'AW-18024459039/BNmgCMbE8YocEJ_W3ZJD', 'value': 1.0, 'currency': 'BRL', 'transaction_id': ''});">
-       <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-       </svg> Falar com Especialista </a>
+   </section><!-- SERVERS SECTION -->
+   <section class="relative py-12 sm:py-20 px-4 bg-gradient-to-b from-gray-900 to-gray-950">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-900/10 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-6xl mx-auto"><!-- Section Header -->
+     <div class="text-center mb-10 sm:mb-16"><span class="inline-block px-3 sm:px-4 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-xs sm:text-sm font-medium mb-3 sm:mb-4">🖥️ Infraestrutura</span>
+      <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">18 <span class="gradient-text">Servidores</span> Disponíveis</h2>
+      <p class="text-gray-400 max-w-xl mx-auto text-sm sm:text-base">Mais opções, mais flexibilidade e mais oportunidades de ganho para seus clientes</p>
+     </div><!-- Servers Grid -->
+     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-12"><!-- Server Cards (6 visible + 12 more) -->
+      <div class="bg-gray-900/50 border border-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-6 card-glow backdrop-blur-sm">
+       <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
+         <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4" />
+         </svg>
+        </div>
+        <h3 class="font-semibold text-white text-sm sm:text-base">Servidor 1</h3>
+       </div>
+       <p class="text-xs sm:text-sm text-gray-400">Velocidade máxima</p>
+      </div>
+      <div class="bg-gray-900/50 border border-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-6 card-glow backdrop-blur-sm">
+       <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
+         <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4" />
+         </svg>
+        </div>
+        <h3 class="font-semibold text-white text-sm sm:text-base">Servidor 2</h3>
+       </div>
+       <p class="text-xs sm:text-sm text-gray-400">Streaming HD</p>
+      </div>
+      <div class="bg-gray-900/50 border border-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-6 card-glow backdrop-blur-sm">
+       <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
+         <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4" />
+         </svg>
+        </div>
+        <h3 class="font-semibold text-white text-sm sm:text-base">Servidor 3</h3>
+       </div>
+       <p class="text-xs sm:text-sm text-gray-400">Compatível VOD</p>
+      </div>
+      <div class="bg-gray-900/50 border border-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-6 card-glow backdrop-blur-sm">
+       <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+         <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4" />
+         </svg>
+        </div>
+        <h3 class="font-semibold text-white text-sm sm:text-base">Servidor 4</h3>
+       </div>
+       <p class="text-xs sm:text-sm text-gray-400">Múltiplos canais</p>
+      </div>
+      <div class="bg-gray-900/50 border border-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-6 card-glow backdrop-blur-sm">
+       <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+         <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4" />
+         </svg>
+        </div>
+        <h3 class="font-semibold text-white text-sm sm:text-base">Servidor 5</h3>
+       </div>
+       <p class="text-xs sm:text-sm text-gray-400">4K disponível</p>
+      </div>
+      <div class="bg-gray-900/50 border border-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-6 card-glow backdrop-blur-sm">
+       <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center flex-shrink-0">
+         <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4" />
+         </svg>
+        </div>
+        <h3 class="font-semibold text-white text-sm sm:text-base">+ 12 Servidores</h3>
+       </div>
+       <p class="text-xs sm:text-sm text-gray-400">E muito mais...</p>
+      </div>
+     </div><!-- Benefits Grid -->
+     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div class="bg-gray-900/50 border border-green-500/30 rounded-lg sm:rounded-xl p-4 sm:p-6 card-glow backdrop-blur-sm">
+       <div class="flex items-start gap-3">
+        <div class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+         <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+         </svg>
+        </div>
+        <div class="min-w-0">
+         <p class="text-gray-300 font-medium text-xs sm:text-sm">Variedade</p>
+         <p class="text-xs text-gray-500 mt-1">Múltiplas opções para clientes</p>
+        </div>
+       </div>
+      </div>
+      <div class="bg-gray-900/50 border border-green-500/30 rounded-lg sm:rounded-xl p-4 sm:p-6 card-glow backdrop-blur-sm">
+       <div class="flex items-start gap-3">
+        <div class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+         <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+         </svg>
+        </div>
+        <div class="min-w-0">
+         <p class="text-gray-300 font-medium text-xs sm:text-sm">Confiabilidade</p>
+         <p class="text-xs text-gray-500 mt-1">Servidores redundantes</p>
+        </div>
+       </div>
+      </div>
+      <div class="bg-gray-900/50 border border-green-500/30 rounded-lg sm:rounded-xl p-4 sm:p-6 card-glow backdrop-blur-sm">
+       <div class="flex items-start gap-3">
+        <div class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+         <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+         </svg>
+        </div>
+        <div class="min-w-0">
+         <p class="text-gray-300 font-medium text-xs sm:text-sm">Performance</p>
+         <p class="text-xs text-gray-500 mt-1">Velocidade otimizada</p>
+        </div>
+       </div>
+      </div>
+      <div class="bg-gray-900/50 border border-green-500/30 rounded-lg sm:rounded-xl p-4 sm:p-6 card-glow backdrop-blur-sm">
+       <div class="flex items-start gap-3">
+        <div class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+         <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+         </svg>
+        </div>
+        <div class="min-w-0">
+         <p class="text-gray-300 font-medium text-xs sm:text-sm">Escalabilidade</p>
+         <p class="text-xs text-gray-500 mt-1">Cresce com você</p>
+        </div>
+       </div>
+      </div>
      </div>
-     <p class="text-gray-400 text-sm">Resposta em até 2 horas • Sem compromisso</p>
     </div>
-   </section><!-- Floating WhatsApp Button --> <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-40 glow" style="box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);">
-    <svg class="w-7 h-7" fill="currentColor" viewbox="0 0 24 24">
-     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-    </svg></a><!-- Footer -->
-   <footer class="py-8 px-6 bg-gray-50 border-t border-gray-100">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-     <div class="flex items-center gap-2">
-      <img src="https://imgur.com/6bsibIg.png" alt="Mare Logo" class="w-6 h-6" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#0066CC'; this.alt='Mare Logo unavailable';">
+   </section><!-- SOCIAL PROOF SECTION -->
+   <section class="relative py-12 sm:py-20 px-4 bg-gradient-to-b from-gray-950 to-gray-900">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/5 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-6xl mx-auto"><!-- Section Header -->
+     <div class="text-center mb-10 sm:mb-16"><span class="inline-block px-3 sm:px-4 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-xs sm:text-sm font-medium mb-3 sm:mb-4">⭐ Prova Social</span>
+      <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">Confie em <span class="gradient-text">números reais</span></h2>
+      <p class="text-gray-400 max-w-xl mx-auto text-sm sm:text-base">Milhares de revendedores já ganham dinheiro com o Painel NetPlay</p>
+     </div><!-- Stats Grid -->
+     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+      <div class="bg-gray-900/60 border border-green-500/20 rounded-lg sm:rounded-xl p-6 sm:p-8 card-glow backdrop-blur-sm text-center">
+       <div class="text-3xl sm:text-4xl font-bold text-green-400 mb-2">
+        5K+
+       </div>
+       <p class="text-gray-400 text-sm sm:text-base">Revendedores ativos</p>
+      </div>
+      <div class="bg-gray-900/60 border border-green-500/20 rounded-lg sm:rounded-xl p-6 sm:p-8 card-glow backdrop-blur-sm text-center">
+       <div class="text-3xl sm:text-4xl font-bold text-green-400 mb-2">
+        50K+
+       </div>
+       <p class="text-gray-400 text-sm sm:text-base">Clientes satisfeitos</p>
+      </div>
+      <div class="bg-gray-900/60 border border-green-500/20 rounded-lg sm:rounded-xl p-6 sm:p-8 card-glow backdrop-blur-sm text-center">
+       <div class="text-3xl sm:text-4xl font-bold text-green-400 mb-2">
+        99.9%
+       </div>
+       <p class="text-gray-400 text-sm sm:text-base">Uptime de confiança</p>
+      </div>
+      <div class="bg-gray-900/60 border border-green-500/20 rounded-lg sm:rounded-xl p-6 sm:p-8 card-glow backdrop-blur-sm text-center">
+       <div class="text-3xl sm:text-4xl font-bold text-green-400 mb-2">
+        24/7
+       </div>
+       <p class="text-gray-400 text-sm sm:text-base">Suporte disponível</p>
+      </div>
+     </div><!-- Testimonials -->
+     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div class="bg-gray-900/50 border border-gray-800 rounded-lg sm:rounded-xl p-6 sm:p-8 card-glow backdrop-blur-sm">
+       <div class="flex items-center gap-3 mb-4 sm:mb-6">
+        <div class="flex gap-1">
+         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+         </svg>
+         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+         </svg>
+         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+         </svg>
+         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+         </svg>
+         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+         </svg>
+        </div><span class="text-xs sm:text-sm text-gray-400">5.0</span>
+       </div>
+       <p class="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">"Melhor decisão que tomei! Comecei pequeno e hoje ganho muito mais que esperava. O suporte é excelente."</p>
+       <div class="flex items-center gap-3">
+        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex-shrink-0"></div>
+        <div class="min-w-0">
+         <p class="font-semibold text-white text-xs sm:text-sm">Carlos M.</p>
+         <p class="text-gray-500 text-xs">Revendedor desde 2023</p>
+        </div>
+       </div>
+      </div>
+      <div class="bg-gray-900/50 border border-gray-800 rounded-lg sm:rounded-xl p-6 sm:p-8 card-glow backdrop-blur-sm">
+       <div class="flex items-center gap-3 mb-4 sm:mb-6">
+        <div class="flex gap-1">
+         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+         </svg>
+         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+         </svg>
+         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+         </svg>
+         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+         </svg>
+         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+         </svg>
+        </div><span class="text-xs sm:text-sm text-gray-400">5.0</span>
+       </div>
+       <p class="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">"Painel muito intuitivo, preços competitivos e o melhor: recebo meu ganho rápido. Recomendo!"</p>
+       <div class="flex items-center gap-3">
+        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex-shrink-0"></div>
+        <div class="min-w-0">
+         <p class="font-semibold text-white text-xs sm:text-sm">Ana S.</p>
+         <p class="text-gray-500 text-xs">Revendedora desde 2024</p>
+        </div>
+       </div>
+      </div>
+      <div class="bg-gray-900/50 border border-gray-800 rounded-lg sm:rounded-xl p-6 sm:p-8 card-glow backdrop-blur-sm">
+       <div class="flex items-center gap-3 mb-4 sm:mb-6">
+        <div class="flex gap-1">
+         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+         </svg>
+         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+         </svg>
+         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+         </svg>
+         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+         </svg>
+         <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+         </svg>
+        </div><span class="text-xs sm:text-sm text-gray-400">5.0</span>
+       </div>
+       <p class="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">"Excelente plataforma! Fácil de usar, confiável e com os melhores preços do mercado. Vale muito a pena!"</p>
+       <div class="flex items-center gap-3">
+        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex-shrink-0"></div>
+        <div class="min-w-0">
+         <p class="font-semibold text-white text-xs sm:text-sm">Rafael T.</p>
+         <p class="text-gray-500 text-xs">Revendedor desde 2023</p>
+        </div>
+       </div>
+      </div>
      </div>
-     <p class="text-gray-500 text-sm">© 2024 Mare Agência. Todos os direitos reservados.</p>
     </div>
-   </footer>
+   </section><!-- CONTACT / FOOTER SECTION -->
+   <section class="relative py-12 sm:py-20 px-4 bg-gray-950">
+    <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-900 to-gray-950"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-500/50 to-transparent"></div>
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+     <div class="mb-12 sm:mb-16">
+      <h2 id="footer-cta" class="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-6">Comece <span class="gradient-text">hoje mesmo</span></h2>
+      <p class="text-gray-400 mb-6 sm:mb-8 max-w-xl mx-auto text-sm sm:text-base">Entre em contato pelo WhatsApp e comece a ganhar dinheiro revendendo IPTV com o Painel NetPlay.</p><button onclick="trackPixel(); const msg = encodeURIComponent('Olá! Gostaria de começar a revender IPTV com o Painel NetPlay. Pode me ajudar?'); window.open('https://wa.me/5511971128018?text=' + msg, '_blank'); return false;" class="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-10 py-3 sm:py-5 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-bold text-sm sm:text-lg rounded-lg sm:rounded-xl btn-hero pulse-glow">
+       <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+       </svg><span class="hidden sm:inline">Falar no WhatsApp</span> <span class="sm:hidden">WhatsApp</span> </button>
+     </div><!-- Company Info -->
+     <div class="grid sm:grid-cols-3 gap-6 sm:gap-8 py-8 sm:py-12 border-t border-gray-800">
+      <div class="text-center">
+       <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-green-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+       </div>
+       <h4 class="font-semibold text-white mb-1 text-sm sm:text-base">TBNTV – Painel NetPlay</h4>
+       <p class="text-xs sm:text-sm text-gray-400">CNPJ: 32.554.785/0001-30</p>
+      </div>
+      <div class="text-center">
+       <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-green-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+       </div>
+       <h4 class="font-semibold text-white mb-1 text-sm sm:text-base">Horário de Atendimento</h4>
+       <p class="text-xs sm:text-sm text-gray-400">Seg-Sex: 8h às 18h</p>
+      </div>
+      <div class="text-center">
+       <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-green-500" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+       </div>
+       <h4 class="font-semibold text-white mb-1 text-sm sm:text-base">WhatsApp</h4>
+       <p class="text-xs sm:text-sm text-gray-400">(11) 97112-8018</p>
+      </div>
+     </div><!-- Copyright -->
+     <div class="pt-6 sm:pt-8 border-t border-gray-800">
+      <p class="text-xs sm:text-sm text-gray-500">© 2024 TBNTV – Painel NetPlay. Todos os direitos reservados.</p>
+     </div>
+    </div>
+   </section><!-- Floating WhatsApp Button --> <button onclick="trackPixel(); const msg = encodeURIComponent('Olá! Gostaria de começar a revender IPTV com o Painel NetPlay. Pode me ajudar?'); window.open('https://wa.me/5511971128018?text=' + msg, '_blank'); return false;" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-14 h-14 sm:w-16 sm:h-16 bg-green-500 hover:bg-green-400 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 btn-hero pulse-glow border-0 cursor-pointer" aria-label="Contato WhatsApp">
+    <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg></button>
   </div>
   <script>
-    // Google Analytics Conversion Tracking
-    window.gtag = window.gtag || function() {
-      (window.dataLayer = window.dataLayer || []).push(arguments);
-    };
+    // Google Ads Conversion Tracking Function
+    function trackPixel() {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17990595508/MMzaCO6RzIocELTnyoJD',
+        'value': 1.0,
+        'currency': 'BRL',
+        'transaction_id': ''
+      });
+    }
 
     const defaultConfig = {
-      hero_title: 'Transforme suas <span class="gradient-text">Redes Sociais</span> em uma Máquina de Vendas',
-      hero_subtitle: 'Gestão profissional de mídias sociais que atrai, engaja e converte seguidores em clientes fiéis. Resultados mensuráveis, estratégias comprovadas.',
-      cta_text: 'Quero Resultados Agora',
-      primary_color: '#0066CC',
-      secondary_color: '#0099FF',
-      text_color: '#111827',
-      background_color: '#FFFFFF',
-      surface_color: '#F9FAFB'
+      hero_title: 'Ganhe dinheiro revendendo IPTV',
+      hero_subtitle: 'Painel NetPlay com créditos baratos e ativação rápida. Comece sua jornada como revendedor hoje mesmo.',
+      plans_title: 'Nossos Planos',
+      footer_cta: 'Comece hoje mesmo',
+      background_color: '#030712',
+      surface_color: '#111827',
+      text_color: '#ffffff',
+      primary_action_color: '#16a34a',
+      secondary_action_color: '#9ca3af',
+      font_family: 'Space Grotesk',
+      font_size: 16
     };
 
     async function onConfigChange(config) {
       const heroTitle = document.getElementById('hero-title');
+      const title = config.hero_title || defaultConfig.hero_title;
+      heroTitle.innerHTML = title.includes('IPTV') 
+        ? title.replace('IPTV', '<span class="gradient-text">IPTV</span>').replace('revendendo', '<br>revendendo')
+        : title;
+      
       const heroSubtitle = document.getElementById('hero-subtitle');
-      const ctaText = document.getElementById('cta-text');
+      heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+      
+      const plansTitle = document.getElementById('plans-title');
+      const plansTitleText = config.plans_title || defaultConfig.plans_title;
+      plansTitle.innerHTML = plansTitleText.includes('Planos')
+        ? plansTitleText.replace('Planos', '<span class="gradient-text">Planos</span>')
+        : plansTitleText;
+      
+      const footerCta = document.getElementById('footer-cta');
+      const footerText = config.footer_cta || defaultConfig.footer_cta;
+      footerCta.innerHTML = footerText.includes('hoje')
+        ? footerText.replace('hoje mesmo', '<span class="gradient-text">hoje mesmo</span>')
+        : footerText;
 
-      if (heroTitle) {
-        heroTitle.innerHTML = config.hero_title || defaultConfig.hero_title;
-      }
-      if (heroSubtitle) {
-        heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
-      }
-      if (ctaText) {
-        ctaText.textContent = config.cta_text || defaultConfig.cta_text;
-      }
-
-      // Apply colors
-      document.documentElement.style.setProperty('--primary', config.primary_color || defaultConfig.primary_color);
-      document.documentElement.style.setProperty('--secondary', config.secondary_color || defaultConfig.secondary_color);
+      const customFont = config.font_family || defaultConfig.font_family;
+      document.body.style.fontFamily = `${customFont}, Inter, sans-serif`;
     }
 
     function mapToCapabilities(config) {
@@ -382,43 +582,34 @@
         recolorables: [
           {
             get: () => config.background_color || defaultConfig.background_color,
-            set: (value) => {
-              config.background_color = value;
-              window.elementSdk.setConfig({ background_color: value });
-            }
+            set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
           },
           {
             get: () => config.surface_color || defaultConfig.surface_color,
-            set: (value) => {
-              config.surface_color = value;
-              window.elementSdk.setConfig({ surface_color: value });
-            }
+            set: (value) => { config.surface_color = value; window.elementSdk.setConfig({ surface_color: value }); }
           },
           {
             get: () => config.text_color || defaultConfig.text_color,
-            set: (value) => {
-              config.text_color = value;
-              window.elementSdk.setConfig({ text_color: value });
-            }
+            set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
           },
           {
-            get: () => config.primary_color || defaultConfig.primary_color,
-            set: (value) => {
-              config.primary_color = value;
-              window.elementSdk.setConfig({ primary_color: value });
-            }
+            get: () => config.primary_action_color || defaultConfig.primary_action_color,
+            set: (value) => { config.primary_action_color = value; window.elementSdk.setConfig({ primary_action_color: value }); }
           },
           {
-            get: () => config.secondary_color || defaultConfig.secondary_color,
-            set: (value) => {
-              config.secondary_color = value;
-              window.elementSdk.setConfig({ secondary_color: value });
-            }
+            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+            set: (value) => { config.secondary_action_color = value; window.elementSdk.setConfig({ secondary_action_color: value }); }
           }
         ],
         borderables: [],
-        fontEditable: undefined,
-        fontSizeable: undefined
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => { config.font_family = value; window.elementSdk.setConfig({ font_family: value }); }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => { config.font_size = value; window.elementSdk.setConfig({ font_size: value }); }
+        }
       };
     }
 
@@ -426,7 +617,8 @@
       return new Map([
         ['hero_title', config.hero_title || defaultConfig.hero_title],
         ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
-        ['cta_text', config.cta_text || defaultConfig.cta_text]
+        ['plans_title', config.plans_title || defaultConfig.plans_title],
+        ['footer_cta', config.footer_cta || defaultConfig.footer_cta]
       ]);
     }
 
@@ -437,7 +629,9 @@
         mapToCapabilities,
         mapToEditPanelValues
       });
+    } else {
+      onConfigChange(defaultConfig);
     }
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9de360821605480d',t:'MTc3MzgyNzg4Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e103edd922b139e',t:'MTc3NDI5ODM2Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
